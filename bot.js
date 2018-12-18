@@ -104,7 +104,7 @@ message.channel.createWebhook(message.author.username, message.author.avatarURL)
             .setAuthor(message.author.username, message.author.avatarURL)
         .setFooter(`${message.guild.name} `)
      message.channel.send(embed500)
-     message.author.send('` انت معاقب ميوت شاتي بسبب نشر سرفرات ان كان عن طريق الخطا **ف** تكلم مع الادارة `');
+     message.author.send('`Talk to staff member to unmute you `');
    
        
     }
@@ -262,7 +262,7 @@ ${users.join('\n')}
 });
 client.on('message' , message => {
 if(message.content === '!voice') {
-    message.channel.send(`**عدد الاشخاص الموجودين بـ  الرومات الصوتيه : ${message.guild.members.filter(g => g.voiceChannel).size}**`);
+    message.channel.send(`**Members in the voice calls : ${message.guild.members.filter(g => g.voiceChannel).size}**`);
 }
 });
 
@@ -272,14 +272,14 @@ client.on('message', async message => {
   if(message.content.startsWith(prefix + "tc")) {
       if(message.author.bot) return;
     if(!message.channel.guild) return;
-    await message.channel.send("ارسل اسم الروم").then(e => {
+    await message.channel.send("Send the channel name").then(e => {
     var filter = m => m.author.id === message.author.id
     var  name = '';
    var time = '';
     var type = '';
     var limit = '';
  
-    var types = ["text", "voice", "كتابي", "صوتي"];
+    var types = ["text", "voice"];
     var chaName = message.channel.awaitMessages(filter, { max: 1, time: 20000, errors: ['time'] })
     .then(collected => {
       name = collected.first().content
@@ -287,33 +287,33 @@ client.on('message', async message => {
  
  
  
-e.edit("ارسل مدة الروم بالدقائق لااقل من 2 ولا اعلى من 180")
+e.edit("Send For how long do u want the channel between 2-18")
 var chaTime = message.channel.awaitMessages(filter, { max: 1, time: 20000, errors: ['time'] })
 .then(co => {
-if(isNaN(co.first().content)) return message.reply("الوقت بالدقائق ! ارقام فقطٍ");
+if(isNaN(co.first().content)) return message.reply("Time only in Minutes");
 if(co.first().content > 180 || co.first().content < 2) return message.channel.send("لا اقل من دقيقتان ولا اكثر من 180 دقيقه")
   time = co.first().content
 co.first().delete()
-  e.edit("ارسل نوع الروم text, voice")
+  e.edit("Send The Type of the channel that you want text, voice")
 var chaType = message.channel.awaitMessages(filter, { max: 1, time: 20000, errors: ['time'] })
 .then(col => {
   type = col.first().content
 col.first().delete()
-e.edit("ارسل عدد الاعضاء الذين يستطيعون الدخول")
+e.edit("How many can Join your call 1-99")
 var chaLimit = message.channel.awaitMessages(filter, { max: 1, time: 20000, errors: ['time'] })
 .then(coll => {
   if(isNaN(coll.first().content)) return message.reply("عدد الاعضاء يكون بالارقام فقط");
     limit = coll.first().content
 coll.first().delete()
  
-  e.edit("جاري اعداد الغرفه الرجاء الانتضار...")
+  e.edit("Creating the channel plz wait...")
   message.guild.createChannel(name, type).then(c => {
     c.edit({
       userLimit: limit
     })
     setTimeout(() => {
       c.delete()
-      message.channel.send("تم انقضاء الوقت الكامل لا اعده التجديد اسنخدم امر !tc")
+      message.channel.send("The Time is Up you can mak new one using this command !tc")
     }, Math.floor(time*60000))
     var  chna = message.guild.channels.find("name", "log")
     const embed = new Discord.RichEmbed()
@@ -321,7 +321,7 @@ coll.first().delete()
       embed: embed.setTitle("New TempChat") .setDescription(`Channel Type: ${type}`) .addField("Channel owner", message.author.username) .addField("Channel name", name) .addField("Channel timeout", time) .addField("Channel ID", c.id)
     })
   })
-  e.edit("تم انشاء الغرفه استمتع")
+  e.edit("Channel has been created have fun ")
  
 })
 })
@@ -482,7 +482,7 @@ m.sendMessage(args)
 client.on('ebnklb',function(ebnklb) {
     
     if(ebnklb.content.startsWith(`<@${client.user.id}>`)) {
-        ebnklb.channel.send('Hey Im **Sliver bot !**  A Nice Bot Developed By:`MHSTR`')
+        ebnklb.channel.send('Hey Im **Love System bot !**  A Nice Bot Developed By:`StarZz`')
         ebnklb.channel.send('My Prefix `!`')
 
     }
@@ -493,7 +493,7 @@ client.on('ebnklb',function(ebnklb) {
 
 client.on('message', message => {
      if (message.author.bot) return;
-    if (message.content.startsWith("رابط")) {
+    if (message.content.startsWith("link")) {
         message.channel.createInvite({
         thing: true,
         maxUses: 1,
@@ -503,16 +503,16 @@ client.on('message', message => {
     )
     const embed = new Discord.RichEmbed()
         .setColor("RANDOM")
-          .setDescription(" تم أرسال الرابط برسالة خاصة ")
+          .setDescription(" Check out Your dms ")
            .setAuthor(client.user.username, client.user.avatarURL)
                  .setAuthor(client.user.username, client.user.avatarURL)
-                .setFooter('طلب بواسطة: ' + message.author.tag)
+                .setFooter('Requested By: ' + message.author.tag)
 
       message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
               const Embed11 = new Discord.RichEmbed()
         .setColor("RANDOM")
         
-    .setDescription(" مدة الرابط : ساعه  عدد استخدامات الرابط : 1 ")
+    .setDescription(" Only 1 member can join using this link and it works for 1 hour only ")
       message.author.sendEmbed(Embed11)
     }
 });
@@ -520,7 +520,7 @@ client.on('message', message => {
 client.on('message', message => {
 if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
     let pages = [`
-***__وصف عن البوت__***
+***__Bot Info__***
 **
 :gem:  البوت فيه كثير ميزات حلوة و جميلة
  ا:rocket: البوت يعمل 24 ساعه 
