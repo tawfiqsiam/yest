@@ -522,102 +522,92 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
     let pages = [`
 ***__Bot Info__***
 **
-:gem:  البوت فيه كثير ميزات حلوة و جميلة
- ا:rocket: البوت يعمل 24 ساعه 
-بوت يمتلك مضد جحفله +سبام+نشر روابط+مضاد سب :gear: 
+:gem:  What is good about the bot
+ ا:rocket: The bot is Running 24/7
+The bot has anti spam and anti raid (nuke) :gear: 
 **
         ***__General orders__***
 **
-『!allbots/لعرض جميع البوتات الي بالسيرفر』
-『!server/يعرض لك معلومات عن السيرفر』
-『!bot/يعرض لك كل معلومات البوت』
-『!skin <name>/يعرض لك سكنك بماين كرافت』
-『!count/يعرض لك عدد الاشخاص بالسيرفر بدون بوتات』
-『!invites/ يعرض لك  عدد انفايتاتك بالسيرفر 』
-『!invite-codes/يعرض لك روابط الانفايتات حكك في السيرفر 』
-『!cal/اله حاسبة』
-『!trans <language> <any thing>/يترجم لك الي تبيه من اي لغة』
-『!short/يختصر لك رابط كبير الى رابط صغير』
-『!tag/يكتب لك الكلمة بشكل جميل وكبير』
-『!google/للبحث في قوقل عن طريق الدسكورد』
-『!perms/يعرض لك برمشناتك بالسيرفر』
-『!yn/تسأل بوت والبوت يجاوبك بنعم او لا』
-『!w/امر يخليك مثل بوت تكتب عبره مع امر ويسويك بوت』
-『!za5/يزخرف لك كلمة او جملة』
-『!rooms/يعرض لك كل الرومات الي بالسيرفر مع عددها』
-『!roles/يعرض لك كل الرانكات بالسيرفر بشكل جميل』
-『!emojilist/يعرض لك كل الايموجيات الي بالسيرفر』
-『say/يكرر الكلام الي تكتبو』
-『!image/صورة السيرفر』
-『!members/��عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص』
-『!id/معلومات عنك』
-『!profile/عرض بروفايل حقك』
-『!tc/انشاء روم مؤقت ويمكنك تحديد الاعدادات』
-『!bans / عدد الاشخاص المبندة 』
-『!voice /  يوم لك بكتابه مجموع عدد الاشخاص الموجودين برومات』
-『!avatar/صورتك او صورة الي تمنشنو』
-『!embed/يكرر الي تقولو بشكل حلو』
-『!discrim/كود يضهر لك الاشخاص نفس تاقك』
-『!emoji <any things>/لتحويل اي كلمه تقولها الي ايموجي』
-『!inv/لدعوة البوت الى سيرفرك』
+『!allbots/Displays all bots to the server』
+『!server/Shows you information about the server』
+『!bot/Displays all bot information』
+『!skin <name>/Shows you Minecraft Skin』
+『!count/Shows you the number of people in the server without a bots』
+『!invites/The bot will show you how many you have invited to the server 』
+『!invite-codes/It shows all of your invite links』
+『!cal/calculator』
+『!trans <language> <any thing>/It translates any language you want』
+『!short/Shorten you a big link to a small link』
+『!tag/Write you the word beautifully and great』
+『!google/Google anything you want』
+『!perms/it will show you your perms on the server』
+『!yn/ask the bot anything you want and it will answer you with yes or no』
+『!w/This will make you say somethisng as you are a  bot』
+『!rooms/the bot will show you all the server channels with there count』
+『!roles/the bot will show you all the server roles』
+『!emojilist/the bot will show you server emji's』
+『say/thhe bot will say what you said』
+『!image/server pic』
+『!members/��Show you the number of all people statues, number of bots and number of people』
+『!id/info about you』
+『!profile/your prfile』
+『!tc/Create a temporary Channel and you can select settings』
+『!bans / banned members count 』
+『!voice /  The day you write the total number of people in voice channels』
+『!avatar/you avatar』
+『!embed/Repeat what you said with embed』
+『!discrim/it will show you the people with the same tag』
+『!emoji <any things>/To convert any word you say to emoji』
+『!inv/to invite the bot to your server』
 『!support/سيرفر الدعم』
-『!contact/ارسال اقتراح او لمراسلة صاحب البوت』
+『!contact/talk with  the bot owner』
 **
   `
 ,`
         ***__Administrative Orders__***
 **
-『!move @user /  لسحب الشخص الى روومك』
-『!voiceonline /  لتفعيل خاصيه فويس اونلاين يسحب عدد الاشخاص موجودين برومات』
-『!bc / رسالة جماعية الى كل اعضاء السيرفر』
-『!bcrole / لارسال رساله جماعي لرتبه محدده يجب تمنشنها 』
-『!role @user <rank> / لأعطاء رتبة لعضو معين』
-『!roleremove @user <rank> / لازالة الرتبة من شخص معين』
-『!role all <rank> / لأعطاء رتبة للجميع』
-『!role humans <rank> / لأعطاء رتبة للاشخاص فقط』
-『!role bots <rank> / لأعطاء رتبة لجميع البوتات』
-『!hchannel / اخفاء الشات』
-『!schannel / اضهار الشات المخفية』
-『!clr <numbr> / مسح الشات بعدد』
-『!clear / مسح الشات』
-『!mute @user <reason> / اعطاء العضو ميوت لازم رتبة <Muted>』
-『!unmute @user / لفك الميوت عن الشخص 』
-『!kick @user <reason> / طرد الشخص من السيرفر』
-『!ban @user <reason> / حضر الشخص من السيرفر』
-『!mutechannel / تقفيل الشات』
-『!unmutechannel / فتح الشات』
-『!dc / مسح كل الرومات』
-『!dr / <مسح كل الرانكات <لازم تكون رانك البوت فوق كل الرانكات』
-『!ct <name> / انشاء شات』
-『!cv <name> / انشاء رووم فويس』
-『!delet <name> / مسح الشات او الرووم فويس』
-『❖!ccolors <number> / ينشا لك الوان مع كم الوان تبي』
+『!move @user / to move someone to your voice call』
+『!voiceonline /  create a voice channel with the name that it shows how many in the voice calls』
+『!role @user <rank> /to give someone a role』
+『!roleremove @user <rank> /to remove a role from someone』
+『!role all <rank> / to give a role to everyone』
+『!role humans <rank> /to give a role to humans only』
+『!role bots <rank> /to give a role to bots only』
+『!hchannel / hide a test channel』
+『!schannel / show a text channel』
+『!clr <numbr> / clear the chat with number 』
+『!clear /to clear the chat』
+『!mute @user <reason> / to give someone mute but make sure you have a role with this name <Muted>』
+『!unmute @user /to unmute someone 』
+『!kick @user <reason> / to kick someone with the reason』
+『!ban @user <reason> / to ban someone with the reason』
+『!mutechannel / to mute everyone from talking in a text channel』
+『!unmutechannel / to unmute everyone so they can talk in that channel』
+『!dc / the bot will delete all the channels』
+『!dr /the bot will delete all the roles』
+『!ct <name> / create a text channel』
+『!cv <name> / create a voice channel』
+『!delet <name> / to delete a channel』
+『❖!ccolors <number> / create colors with the number that you want』
    `,`
         ***__Music orders__***
 **
-『${prefix}play / لتشغيل أغنية برآبط أو بأسم』
-『${prefix}skip / لتجآوز الأغنية الحآلية』
-『${prefix}pause / إيقآف الأغنية مؤقتا』
-『${prefix}resume / لموآصلة الإغنية بعد إيقآفهآ مؤقتا』
-『${prefix}vol / لتغيير درجة الصوت 100 - 0』
-『${prefix}stop / لإخرآج البوت من الروم』
-『${prefix}np / لمعرفة الأغنية المشغلة حآليا』
-『${prefix}queue / لمعرفة قآئمة التشغيل』
+『${prefix}play / 』
+『${prefix}skip / 』
+『${prefix}pause / 』
+『${prefix}resume / ا』
+『${prefix}vol / 100 - 0』
+『${prefix}stop / 』
+『${prefix}np / now playing』
+『${prefix}queue / what is playing list』
 **
-        ***__Games orders__***
+        ***__about the bot__***
  **       
-『!rps / حجر ورقة مقص』
-『!speed / اسرع كتابة』
-『!quas / اسئلة عامة』
-『!نكت / نكت 』
-『!لعبة فكك / فكك』
-『!عواصم عشوائي/عواصم』
-『!لعبة كت تويت / كت تويت』
-『!roll <number> / قرعة』
-『!لو خيروك بطريقة حلوة / لو خيروك』
-『!لعبة مريم / مريم』
-『!فوائد ونصائح  / هل تعلم』
-『!يعطيك عقابات قاسية / عقاب 』
+『 The bot was created By StarZz#9900
+:small_orange_diamond: Link Server Support︾
+https://discord.gg/spWYAfZ
+:small_blue_diamond: Link ︾ 
+https://discordapp.com/api/oauth2/authorize?client_id=521985606008569857&permissions=2146958839&scope=bot』
 
 
 **
@@ -669,7 +659,7 @@ client.on('message', message => {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#8650a7")
-  .addField("Done" , " تــــم ارســالك في الخــاص")
+  .addField("Done" , " Check your DM's")
   message.channel.sendEmbed(embed);
     }
 });
@@ -710,18 +700,18 @@ client.on('message', async msg => {
 	command = command.slice(prefix.length)
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
-		if (!voiceChannel) return msg.channel.send('يجب توآجد حضرتك بروم صوتي .');
+		if (!voiceChannel) return msg.channel.send('toy have to be in a voice call .');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
 			
-			return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم');
+			return msg.channel.send('I dont have perms to talk in this channel');
 		}
 		if (!permissions.has('SPEAK')) {
-			return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم');
+			return msg.channel.send('I dont have perms to talk in this channel');
 		}
 
 		if (!permissions.has('EMBED_LINKS')) {
-			return msg.channel.sendMessage("**يجب توآفر برمشن `EMBED LINKS`لدي **")
+			return msg.channel.sendMessage("**i cant send  `EMBED LINKS` **")
 		}
 
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
@@ -732,7 +722,7 @@ client.on('message', async msg => {
 				const video2 = await youtube.getVideoByID(video.id);
 				await handleVideo(video2, msg, voiceChannel, true);
 			}
-			return msg.channel.send(` **${playlist.title}** تم الإضآفة إلى قأئمة التشغيل`);
+			return msg.channel.send(` **${playlist.title}** added the the play list a new song `);
 		} else {
 			try {
 
@@ -742,7 +732,7 @@ client.on('message', async msg => {
 					var videos = await youtube.searchVideos(searchString, 5);
 					let index = 0;
 					const embed1 = new Discord.RichEmbed()
-			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
+			        .setDescription(`**plz pick a song number ** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 
 					.setFooter("sliver Bot")
@@ -756,13 +746,13 @@ ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 						});
 					} catch (err) {
 						console.error(err);
-						return msg.channel.send('لم يتم إختيآر مقطع صوتي');
+						return msg.channel.send('you didnt pick a song ');
 					}
 					const videoIndex = parseInt(response.first().content);
 					var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
 				} catch (err) {
 					console.error(err);
-					return msg.channel.send(':X: لا يتوفر نتآئج بحث ');
+					return msg.channel.send(':X:cant find anything ');
 				}
 			}
 
