@@ -2822,7 +2822,7 @@ client.on('message', message => {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-  .addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/ftKCHF4**")
+  .addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/spWYAfZ**")
      
      
   message.channel.sendEmbed(embed);
@@ -2845,7 +2845,7 @@ if(!omar.guild.member(client.user).hasPermission("MANAGE_ROLES_OR_PERMISSIONS"))
 omar.guild.roles.forEach(m => {
 m.delete();
 });// omar jedol / Codes
-omar.reply("`تم حذف جميع الرتب بنجاح`")
+omar.reply("`Deleted all the roles`")
 }// omar jedol / Codes
 });
 
@@ -2960,8 +2960,8 @@ client.on("guildMemberAdd", member => {
         .setColor('RANDOM')
         .setThumbnail(h.avatarURL)
         .setAuthor(h.username,h.avatarURL)
-        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
-         .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)      
+        .addField(': Joined discord at',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
+         .addField(': Joined The server at',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)      
          .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
      welcomer.send({embed:heroo});          
          
@@ -2989,14 +2989,14 @@ client.on("guildMemberAdd", member => {
                           ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
                               if (err) return console.log(err);
       
-                                    ctx.font = '30px Arial Bold';
-                              ctx.fontSize = '20px';
+                                    ctx.font = '20px Arial Bold';
+                              ctx.fontSize = '15px';
                               ctx.fillStyle = "#FFFFFF";
                                 ctx.fillText(member.user.username, 245, 150);
                               
                               //NAMEً
-                              ctx.font = '30px Arial';
-                              ctx.fontSize = '28px';
+                              ctx.font = '20px Arial';
+                              ctx.fontSize = '20px';
                               ctx.fillStyle = "#FFFFFF";
       ctx.fillText(`Welcome To ${member.guild.name}`, 245, 80);
       
