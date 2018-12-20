@@ -520,6 +520,28 @@ client.on('message', message => {
 client.on('message', message => {
 if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
     let pages = [`
+
+        ***__Colors help__***
+**
+『!createcolors Byusing this command the bot will create 133 roles as colors』
+『!colors <the bot will show you the colors list』
+『!color <number> thats how you can change your color』
+
+**
+  `
+,`
+
+        ***__Welcomer__***
+**
+How to setup
+『Create a channel called <welcome> 』
+or you can do this command 
+『!setwelcomer <channel name> 』
+
+
+**
+  `
+,`
 ***__Bot Info__***
 **
 :gem:  What is good about the bot
@@ -607,7 +629,7 @@ The bot has anti spam and anti raid (nuke) :gear:
 :small_orange_diamond: Link Server Support︾
 https://discord.gg/spWYAfZ
 :small_blue_diamond: Link ︾ 
-https://discordapp.com/api/oauth2/authorize?client_id=521985606008569857&permissions=2146958839&scope=bot』
+https://discordapp.com/api/oauth2/authorize?client_id=521985606008569857&permissions=2146958839&scope=bot 』
 
 
 **
