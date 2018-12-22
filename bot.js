@@ -366,7 +366,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Bot System  | by Abdellhadi`,"http://twitch.tv/S-F")
+client.user.setGame(`!help | !invite `,"http://twitch.tv/S-F")
 client.user.setStatus("dnd")
 });
 
@@ -1250,15 +1250,15 @@ var heroo = new Discord.RichEmbed()
 .setTitle('SLiver Bot Info')
 .setURL('https://discordapp.com/oauth2/authorize?client_id=471464656242737183&permissions=2080898225&scope=bot')
 .setAuthor(client.user.username,client.user.avatarURL)
-.addField("**البرفكس** :",`**[ ${prefix} ]**`,true)
-.addField("**السيرفرات** :","**[ "+client.guilds.size+" ]**",true)
-.addField("**القنوات** :","**[ "+client.channels.size+" ]**",true)
-.addField("**المستخدمين** :","**[ "+client.users.size+" ]**",true)
-.addField("**اسم البوت** : ","**[ "+client.user.username+" ]**",true)
-.addField("**ايدي البوت **:","**[ "+client.user.id+" ]**",true)
-.addField("**الحجم المستخدم** :",`**[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]**`,true)
-.addField("**موعد الاقلاع** :",`**[** **Days:** \`${days}\` **Hours:** \`${hours}\` **Minutes:** \`${minutes}\` **Seconds:** \`${seconds}\` **]**`,true)
-.setFooter("Sliver team  |");
+.addField("**prefix** :",`**[ ${prefix} ]**`,true)
+.addField("**servers** :","**[ "+client.guilds.size+" ]**",true)
+.addField("**channels** :","**[ "+client.channels.size+" ]**",true)
+.addField("**users** :","**[ "+client.users.size+" ]**",true)
+.addField("**bot name** : ","**[ "+client.user.username+" ]**",true)
+.addField("**bot id  **:","**[ "+client.user.id+" ]**",true)
+.addField("**Memory usage ** :",`**[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]**`,true)
+.addField("**up time** :",`**[** **Days:** \`${days}\` **Hours:** \`${hours}\` **Minutes:** \`${minutes}\` **Seconds:** \`${seconds}\` **]**`,true)
+.setFooter("Love System  |");
   message.channel.send({embed:v1}).then(m => {
       setTimeout(() => {
          m.edit({embed:heroo});
@@ -1445,7 +1445,7 @@ message.react("❌")
       .setFooter(message.author.username, message.author.avatarURL)
       .setTitle(':tulip:| Members info')
       .addBlankField(true)
-      .addField('عدد اعضاء السيرفر',`${message.guild.memberCount}`)
+      .addField('Server members count  ',`${message.guild.memberCount}`)
       message.channel.send(IzRo);
     });
 
@@ -1481,13 +1481,13 @@ client.on("message", async message => {
               console.log(`\n${message.author.tag} has ${nul} invites in ${guild.name}\n`)
               var embed = new Discord.RichEmbed()
                   .setColor("#000000")
-                    .addField(`${message.author.username}`, `لقد قمت بدعوة **${nul}** شخص`)
+                    .addField(`${message.author.username}`, `you have invited **${nul}** شخص`)
                           message.channel.send({ embed: embed });
                       return;
                     } else {
                        var embed = new Discord.RichEmbed()
                         .setColor("#000000")
-                        .addField(`${message.author.username}`, `لم تقم بدعوة أي شخص لهذة السيرفر`)
+                        .addField(`${message.author.username}`, `You didnt invite anyone to the server`)
 
                        message.channel.send({ embed: embed });
                         return;
@@ -1495,7 +1495,7 @@ client.on("message", async message => {
         }
         if(message.content.startsWith(prefix + 'invite-codes')) {
 let guild = message.guild
-message.channel.send(":postbox: **لقد قمت بأرسال جميع روابط الدعوات التي قمت بأنشائها في الخاص**")
+message.channel.send(":postbox: **Check your dms**")
 guild.fetchInvites()
 .then(invites => {
 invites.forEach(invite => {
@@ -2505,7 +2505,7 @@ var prefix = "!";
         let args = message.content.split(" ").slice(1).join(" ")
         let men = message.mentions.users.first()
         if(message.content.startsWith(prefix + "roll")){
-            if(!args) return message.channel.send("الرجاء اختيار رقم")
+            if(!args) return message.channel.send("what is the number")
             message.channel.send(Math.floor(Math.random() * args))
         }
     });
@@ -2576,11 +2576,11 @@ let args = message.content.split(" ").slice(1).join(" ");
 
 
 client.users.get("489379054584201247").send(
-    "\n" + "**" + "● السيرفر :" + "**" +
+    "\n" + "**" + "● server :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
-    "\n" + "**" + " ● المرسل : " + "**" +
+    "\n" + "**" + " ● sender : " + "**" +
     "\n" + "**" + "» " + message.author.tag + "**" +
-    "\n" + "**" + " ● الرسالة : " + "**" +
+    "\n" + "**" + " ● msg : " + "**" +
     "\n" + "**" + args + "**")
 
 let embed = new Discord.RichEmbed()
@@ -2744,7 +2744,7 @@ client.on('message', message => {
         let embed = new Discord.RichEmbed()
         .setAuthor(` ${message.author.username} `, message.author.avatarURL)      
         .setTitle(`:small_orange_diamond: click here `)
-        .setURL(`https://discordapp.com/oauth2/authorize?client_id=517517964916817932&permissions=2080898225&scope=bot`)
+        .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=521985606008569857&permissions=2146958839&scope=bot`)
         .setThumbnail(" https://cdn.discordapp.com/avatars/377904849783750667/6c76e412f18c142dfd711d05fb363869.png?size=2048")        
      message.channel.sendEmbed(embed);
        }
@@ -2794,7 +2794,7 @@ client.on('message', message => {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-  .addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/ftKCHF4**")
+  .addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/spWYAfZ**")
      
      
   message.channel.sendEmbed(embed);
@@ -2926,21 +2926,21 @@ client.on("guildMemberAdd", member => {
     let memberavatar = member.user.avatarURL
       if (!welcomer) return;
       if(welcomer) {
-         moment.locale('ar-ly');
+         moment.locale('en-uk');
          var h = member.user;
         let heroo = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(h.avatarURL)
         .setAuthor(h.username,h.avatarURL)
-        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
-         .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)      
+        .addField(': joined discord ',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
+         .addField(': Joined the server',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)      
          .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
      welcomer.send({embed:heroo});          
          
       var Canvas = require('canvas')
       var jimp = require('jimp')
       
-      const w = ['PicsArt_07-17-07.58.02 (1).png'];
+      const w = ['https://media4.picsearch.com/is?nKZvKuOhqgJBL7hrUBomWAwQsNMxdf-k3MV2bF22V1g&height=193'];
       
               let Image = Canvas.Image,
                   canvas = new Canvas(557, 241),
