@@ -3130,12 +3130,12 @@ client.on('guildMemberRemove', member => {
     var embed = new Discord.RichEmbed()
 .setAuthor(member.user.username, member.user.avatarURL)
 .setThumbnail(member.user.avatarURL)
-.setTitle('***الله معك خرجت من السيرفر نتمنى انك تعود ***')
-.addField('**الاسم**',`[ ${member} ]`)
-.addField('**عدد الاعضاء**',`[ ${member.guild.memberCount} ]`,true)
+.setTitle('***it was really nice have you one the server***')
+.addField('**name**',`[ ${member} ]`)
+.addField('**members count **',`[ ${member.guild.memberCount} ]`,true)
 .setColor('Random')
    
-   var channel =member.guild.channels.find('name', 'Stylight')
+   var channel =member.guild.channels.find('name', 'welcome')
    if (!channel) return;
          channel.send({embed : embed});
  
@@ -3245,7 +3245,35 @@ client.on("guildMemberAdd", async member => {
 
 
 
+client.on("message", message => {
+	    if (message.content === "!help") {
+	     const embed = new Discord.RichEmbed() 
+	         .setColor("#00FF00")
+	         .setDescription(`**❓❔❗️❕Send us your love!❗️❕❓❔**
+	        **__1-__:books:🧐 Love bot join our server here https://discord.gg/spWYAfZ  🧐:books:
+	         __2-__:white_check_mark: :part_alternation_mark:️ easy to use :part_alternation_mark:️:white_check_mark: 
+	         __3-__:gear:️We will update the bot every day:gear:️
+	         __4-__:money_with_wings: its free! :money_with_wings:**`)
+	   message.author.sendEmbed(embed)
+	   
+	   }
+	   });
 
+
+client.on("guildMemberAdd", msg => {
+	  var AlphaE = new Discord.RichEmbed()
+	.setColor("RANDOM")
+	.setAuthor(msg.user.username, msg.user.avatarURL)
+	.setThumbnail(msg.user.avatarURL)
+	.setTitle(`
+	Wèlcome to Sèrver 
+	`)
+	.addField("Welcome to our server❤  ", `${msg.user.tag}`, true)
+	.addField(`↓↓↓Link Server↓↓↓ `,`https://discord.gg/spWYAfZ`, true)
+	 .setFooter(msg.user.tag, msg.user.avatarURL, true)
+	msg.user.sendMessage(AlphaE);
+	});
+	
 
 
 
