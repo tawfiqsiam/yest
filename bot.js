@@ -104,7 +104,7 @@ message.channel.createWebhook(message.author.username, message.author.avatarURL)
             .setAuthor(message.author.username, message.author.avatarURL)
         .setFooter(`${message.guild.name} `)
      message.channel.send(embed500)
-     message.author.send('` انت معاقب ميوت شاتي بسبب نشر سرفرات ان كان عن طريق الخطا **ف** تكلم مع الادارة `');
+     message.author.send('`Talk to staff member to unmute you `');
    
        
     }
@@ -262,7 +262,7 @@ ${users.join('\n')}
 });
 client.on('message' , message => {
 if(message.content === '!voice') {
-    message.channel.send(`**عدد الاشخاص الموجودين بـ  الرومات الصوتيه : ${message.guild.members.filter(g => g.voiceChannel).size}**`);
+    message.channel.send(`**Members in the voice calls : ${message.guild.members.filter(g => g.voiceChannel).size}**`);
 }
 });
 
@@ -272,14 +272,14 @@ client.on('message', async message => {
   if(message.content.startsWith(prefix + "tc")) {
       if(message.author.bot) return;
     if(!message.channel.guild) return;
-    await message.channel.send("ارسل اسم الروم").then(e => {
+    await message.channel.send("Send the channel name").then(e => {
     var filter = m => m.author.id === message.author.id
     var  name = '';
    var time = '';
     var type = '';
     var limit = '';
  
-    var types = ["text", "voice", "كتابي", "صوتي"];
+    var types = ["text", "voice"];
     var chaName = message.channel.awaitMessages(filter, { max: 1, time: 20000, errors: ['time'] })
     .then(collected => {
       name = collected.first().content
@@ -287,33 +287,33 @@ client.on('message', async message => {
  
  
  
-e.edit("ارسل مدة الروم بالدقائق لااقل من 2 ولا اعلى من 180")
+e.edit("Send For how long do u want the channel between 2-18")
 var chaTime = message.channel.awaitMessages(filter, { max: 1, time: 20000, errors: ['time'] })
 .then(co => {
-if(isNaN(co.first().content)) return message.reply("الوقت بالدقائق ! ارقام فقطٍ");
+if(isNaN(co.first().content)) return message.reply("Time only in Minutes");
 if(co.first().content > 180 || co.first().content < 2) return message.channel.send("لا اقل من دقيقتان ولا اكثر من 180 دقيقه")
   time = co.first().content
 co.first().delete()
-  e.edit("ارسل نوع الروم text, voice")
+  e.edit("Send The Type of the channel that you want text, voice")
 var chaType = message.channel.awaitMessages(filter, { max: 1, time: 20000, errors: ['time'] })
 .then(col => {
   type = col.first().content
 col.first().delete()
-e.edit("ارسل عدد الاعضاء الذين يستطيعون الدخول")
+e.edit("How many can Join your call 1-99")
 var chaLimit = message.channel.awaitMessages(filter, { max: 1, time: 20000, errors: ['time'] })
 .then(coll => {
   if(isNaN(coll.first().content)) return message.reply("عدد الاعضاء يكون بالارقام فقط");
     limit = coll.first().content
 coll.first().delete()
  
-  e.edit("جاري اعداد الغرفه الرجاء الانتضار...")
+  e.edit("Creating the channel plz wait...")
   message.guild.createChannel(name, type).then(c => {
     c.edit({
       userLimit: limit
     })
     setTimeout(() => {
       c.delete()
-      message.channel.send("تم انقضاء الوقت الكامل لا اعده التجديد اسنخدم امر !tc")
+      message.channel.send("The Time is Up you can mak new one using this command !tc")
     }, Math.floor(time*60000))
     var  chna = message.guild.channels.find("name", "log")
     const embed = new Discord.RichEmbed()
@@ -321,7 +321,7 @@ coll.first().delete()
       embed: embed.setTitle("New TempChat") .setDescription(`Channel Type: ${type}`) .addField("Channel owner", message.author.username) .addField("Channel name", name) .addField("Channel timeout", time) .addField("Channel ID", c.id)
     })
   })
-  e.edit("تم انشاء الغرفه استمتع")
+  e.edit("Channel has been created have fun ")
  
 })
 })
@@ -396,54 +396,12 @@ client.user.setStatus("dnd")
 
 
 
-client.on('message' , message => {
-  var prefix = "!";
-  if(message.author.bot) return;
-  if(message.content.startsWith(prefix + "bcrole")) {
-    let args = message.content.split(" ").slice(1);
-
-    if(!args[0]) {
-      message.channel.send("قم بمنشنة الرتبة | *bcrole @everyone رساله");
-        return;
-    }
-    if(!args[1]) {
-      message.channel.send("قم بمنشنة الرتبة | *bcrole @everyone رساله");
-        return;
-    }
-
-      if(args[0] == "@everyone") {
-        message.channel.send(`لقد تم ارسال هذه الرسالة الى ${message.guild.memberCount} اعضاء`);
-        message.guild.members.forEach(mi => {
-          mi.send(
-          "الرسالة :" + "\n" +
-         "**" + `${args[1]}` + "**"
-          );
-        });
-        return;
-      }
-          var role = message.mentions.roles.first();
-            if(!role) {
-              message.reply("لا توجد رتبة بهذا الاسم");
-                return;
-            }
-        message.guild.members.filter(m => m.roles.get(role.id)).forEach(sa => {
-        sa.send(
-          "الرسالة :" + "\n" +
-        "**" + `${args[1]}` + "**"
-          );
-        });
-      message.channel.send(`**لقد تم ارسال هذه الرسالة الى ${message.guild.members.filter(m => m.roles.get(role.id)).size} عظو**`);
-    }
-});
-
-
-
 
 
   client.on('message', msg => {
     if(msg.author.bot) return;
     
-    if(msg.content === '!sr') {
+    if(msg.content === '!partner') {
       client.guilds.forEach(g => {
         
         let l = g.id
@@ -467,22 +425,11 @@ client.on('message' , message => {
 
 
   
-client.on('message', message => {
-      if (!devs.includes(message.author.id)) return;
-  if (message.content.startsWith(adminprefix + 'sliver')) {
-    if (!devs.includes(message.author.id)) return; 
-let args = message.content.split(' ').slice(1).join(' ');
-
-message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}});
 
 client.on('ebnklb',function(ebnklb) {
     
     if(ebnklb.content.startsWith(`<@${client.user.id}>`)) {
-        ebnklb.channel.send('Hey Im **Sliver bot !**  A Nice Bot Developed By:`MHSTR`')
+        ebnklb.channel.send('Hey Im **Love System bot !**  A Nice Bot Developed By:`StarZz`')
         ebnklb.channel.send('My Prefix `!`')
 
     }
@@ -493,7 +440,7 @@ client.on('ebnklb',function(ebnklb) {
 
 client.on('message', message => {
      if (message.author.bot) return;
-    if (message.content.startsWith("رابط")) {
+    if (message.content.startsWith("link")) {
         message.channel.createInvite({
         thing: true,
         maxUses: 1,
@@ -503,16 +450,16 @@ client.on('message', message => {
     )
     const embed = new Discord.RichEmbed()
         .setColor("RANDOM")
-          .setDescription(" تم أرسال الرابط برسالة خاصة ")
+          .setDescription(" Check out Your dms ")
            .setAuthor(client.user.username, client.user.avatarURL)
                  .setAuthor(client.user.username, client.user.avatarURL)
-                .setFooter('طلب بواسطة: ' + message.author.tag)
+                .setFooter('Requested By: ' + message.author.tag)
 
       message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
               const Embed11 = new Discord.RichEmbed()
         .setColor("RANDOM")
         
-    .setDescription(" مدة الرابط : ساعه  عدد استخدامات الرابط : 1 ")
+    .setDescription(" Only 1 member can join using this link and it works for 1 hour only ")
       message.author.sendEmbed(Embed11)
     }
 });
@@ -520,106 +467,124 @@ client.on('message', message => {
 client.on('message', message => {
 if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
     let pages = [`
-***__وصف عن البوت__***
+        ***__About the bot__***
 **
-:gem:  البوت فيه كثير ميزات حلوة و جميلة
- ا:rocket: البوت يعمل 24 ساعه 
-بوت يمتلك مضد جحفله +سبام+نشر روابط+مضاد سب :gear: 
+this bot was created
+To make sure that your server dont need any other bots 
+So what do we have on this bot 
+1.Welcomer can be used by staff only
+2.colors
+3.logs
+4.public commands
+5.admin commands
+6.music 
 **
+:gem:  What is good about the bot
+ ا:rocket: The bot is Running 24/7
+The bot has anti spam and anti raid (nuke) :gear: 
+**
+『 The bot was created By StarZz#9900
+:small_orange_diamond: Link Server Support︾
+https://discord.gg/spWYAfZ
+:small_blue_diamond: Link ︾ 
+https://discordapp.com/api/oauth2/authorize?client_id=521985606008569857&permissions=2146958839&scope=bot 』
+**
+  `
+,`
+        ***__Colors help__***
+**
+『!createcolors Byusing this command the bot will create 133 roles as colors』
+this command can be used by staff only
+『!colors <the bot will show you the colors list』
+Normal members can use this command
+『!color <number> thats how you can change your color』
+Normal members can use this command
+        ***__Welcomer__***
+**
+How to setup
+『Create a channel called <welcome> 』
+or you can do this command 
+『!setwelcomer <channel name> 』
+can be used by staff only
+ ***__logs__***
+『You can setup the logs channel by creating a channel called <log>』
+**
+  `
+,`
         ***__General orders__***
 **
-『!allbots/لعرض جميع البوتات الي بالسيرفر』
-『!server/يعرض لك معلومات عن السيرفر』
-『!bot/يعرض لك كل معلومات البوت』
-『!skin <name>/يعرض لك سكنك بماين كرافت』
-『!count/يعرض لك عدد الاشخاص بالسيرفر بدون بوتات』
-『!invites/ يعرض لك  عدد انفايتاتك بالسيرفر 』
-『!invite-codes/يعرض لك روابط الانفايتات حكك في السيرفر 』
-『!cal/اله حاسبة』
-『!trans <language> <any thing>/يترجم لك الي تبيه من اي لغة』
-『!short/يختصر لك رابط كبير الى رابط صغير』
-『!tag/يكتب لك الكلمة بشكل جميل وكبير』
-『!google/للبحث في قوقل عن طريق الدسكورد』
-『!perms/يعرض لك برمشناتك بالسيرفر』
-『!yn/تسأل بوت والبوت يجاوبك بنعم او لا』
-『!w/امر يخليك مثل بوت تكتب عبره مع امر ويسويك بوت』
-『!za5/يزخرف لك كلمة او جملة』
-『!rooms/يعرض لك كل الرومات الي بالسيرفر مع عددها』
-『!roles/يعرض لك كل الرانكات بالسيرفر بشكل جميل』
-『!emojilist/يعرض لك كل الايموجيات الي بالسيرفر』
-『say/يكرر الكلام الي تكتبو』
-『!image/صورة السيرفر』
-『!members/��عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص』
-『!id/معلومات عنك』
-『!profile/عرض بروفايل حقك』
-『!tc/انشاء روم مؤقت ويمكنك تحديد الاعدادات』
-『!bans / عدد الاشخاص المبندة 』
-『!voice /  يوم لك بكتابه مجموع عدد الاشخاص الموجودين برومات』
-『!avatar/صورتك او صورة الي تمنشنو』
-『!embed/يكرر الي تقولو بشكل حلو』
-『!discrim/كود يضهر لك الاشخاص نفس تاقك』
-『!emoji <any things>/لتحويل اي كلمه تقولها الي ايموجي』
-『!inv/لدعوة البوت الى سيرفرك』
-『!support/سيرفر الدعم』
-『!contact/ارسال اقتراح او لمراسلة صاحب البوت』
+『!allbots/Displays all bots to the server』
+『!server/Shows you information about the server』
+『!bot/Displays all bot information』
+『!skin <name>/Shows you Minecraft Skin』
+『!count/Shows you the number of people in the server without a bots』
+『!invites/The bot will show you how many you have invited to the server 』
+『!invite-codes/It shows all of your invite links』
+『!cal/calculator』
+『!trans <language> <any thing>/It translates any language you want』
+『!short/Shorten you a big link to a small link』
+『!tag/Write you the word beautifully and great』
+『!google/Google anything you want』
+『!perms/it will show you your perms on the server』
+『!yn/ask the bot anything you want and it will answer you with yes or no』
+『!w/This will make you say somethisng as you are a  bot』
+『!rooms/the bot will show you all the server channels with there count』
+『!roles/the bot will show you all the server roles』
+『!emojilist/the bot will show you server emji's』
+『say/thhe bot will say what you said』
+『!image/server pic』
+『!members/��Show you the number of all people statues, number of bots and number of people』
+『!id/info about you』
+『!profile/your prfile』
+『!tc/Create a temporary Channel and you can select settings』
+『!bans / banned members count 』
+『!voice /  The day you write the total number of people in voice channels』
+『!avatar/you avatar』
+『!embed/Repeat what you said with embed』
+『!discrim/it will show you the people with the same tag』
+『!emoji <any things>/To convert any word you say to emoji』
+『!inv/to invite the bot to your server』
+『!support/Server support』
+『!contact/talk with  the bot owner』
 **
   `
 ,`
         ***__Administrative Orders__***
 **
-『!move @user /  لسحب الشخص الى روومك』
-『!voiceonline /  لتفعيل خاصيه فويس اونلاين يسحب عدد الاشخاص موجودين برومات』
-『!bc / رسالة جماعية الى كل اعضاء السيرفر』
-『!bcrole / لارسال رساله جماعي لرتبه محدده يجب تمنشنها 』
-『!role @user <rank> / لأعطاء رتبة لعضو معين』
-『!roleremove @user <rank> / لازالة الرتبة من شخص معين』
-『!role all <rank> / لأعطاء رتبة للجميع』
-『!role humans <rank> / لأعطاء رتبة للاشخاص فقط』
-『!role bots <rank> / لأعطاء رتبة لجميع البوتات』
-『!hchannel / اخفاء الشات』
-『!schannel / اضهار الشات المخفية』
-『!clr <numbr> / مسح الشات بعدد』
-『!clear / مسح الشات』
-『!mute @user <reason> / اعطاء العضو ميوت لازم رتبة <Muted>』
-『!unmute @user / لفك الميوت عن الشخص 』
-『!kick @user <reason> / طرد الشخص من السيرفر』
-『!ban @user <reason> / حضر الشخص من السيرفر』
-『!mutechannel / تقفيل الشات』
-『!unmutechannel / فتح الشات』
-『!dc / مسح كل الرومات』
-『!dr / <مسح كل الرانكات <لازم تكون رانك البوت فوق كل الرانكات』
-『!ct <name> / انشاء شات』
-『!cv <name> / انشاء رووم فويس』
-『!delet <name> / مسح الشات او الرووم فويس』
-『❖!ccolors <number> / ينشا لك الوان مع كم الوان تبي』
+『!move @user / to move someone to your voice call』
+『!voiceonline /  create a voice channel with the name that it shows how many in the voice calls』
+『!role @user <rank> /to give someone a role』
+『!roleremove @user <rank> /to remove a role from someone』
+『!role all <rank> / to give a role to everyone』
+『!role humans <rank> /to give a role to humans only』
+『!role bots <rank> /to give a role to bots only』
+『!hchannel / hide a test channel』
+『!schannel / show a text channel』
+『!clr <numbr> / clear the chat with number 』
+『!clear /to clear the chat』
+『!mute @user <reason> / to give someone mute but make sure you have a role with this name <Muted>』
+『!unmute @user /to unmute someone 』
+『!kick @user <reason> / to kick someone with the reason』
+『!ban @user <reason> / to ban someone with the reason』
+『!mutechannel / to mute everyone from talking in a text channel』
+『!unmutechannel / to unmute everyone so they can talk in that channel』
+『!dc / the bot will delete all the channels』
+『!dr /the bot will delete all the roles』
+『!ct <name> / create a text channel』
+『!cv <name> / create a voice channel』
+『!delet <name> / to delete a channel』
+『❖!ccolors <number> / create colors with the number that you want』
    `,`
         ***__Music orders__***
 **
-『${prefix}play / لتشغيل أغنية برآبط أو بأسم』
-『${prefix}skip / لتجآوز الأغنية الحآلية』
-『${prefix}pause / إيقآف الأغنية مؤقتا』
-『${prefix}resume / لموآصلة الإغنية بعد إيقآفهآ مؤقتا』
-『${prefix}vol / لتغيير درجة الصوت 100 - 0』
-『${prefix}stop / لإخرآج البوت من الروم』
-『${prefix}np / لمعرفة الأغنية المشغلة حآليا』
-『${prefix}queue / لمعرفة قآئمة التشغيل』
-**
-        ***__Games orders__***
- **       
-『!rps / حجر ورقة مقص』
-『!speed / اسرع كتابة』
-『!quas / اسئلة عامة』
-『!نكت / نكت 』
-『!لعبة فكك / فكك』
-『!عواصم عشوائي/عواصم』
-『!لعبة كت تويت / كت تويت』
-『!roll <number> / قرعة』
-『!لو خيروك بطريقة حلوة / لو خيروك』
-『!لعبة مريم / مريم』
-『!فوائد ونصائح  / هل تعلم』
-『!يعطيك عقابات قاسية / عقاب 』
-
-
+『${prefix}play / 』
+『${prefix}skip / 』
+『${prefix}pause / 』
+『${prefix}resume / ا』
+『${prefix}vol / 100 - 0』
+『${prefix}stop / 』
+『${prefix}np / now playing』
+『${prefix}queue / what is playing list』
 **
    
 `]
@@ -669,7 +634,7 @@ client.on('message', message => {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#8650a7")
-  .addField("Done" , " تــــم ارســالك في الخــاص")
+  .addField("Done" , " Check your DM's")
   message.channel.sendEmbed(embed);
     }
 });
@@ -710,18 +675,18 @@ client.on('message', async msg => {
 	command = command.slice(prefix.length)
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
-		if (!voiceChannel) return msg.channel.send('يجب توآجد حضرتك بروم صوتي .');
+		if (!voiceChannel) return msg.channel.send('toy have to be in a voice call .');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
 			
-			return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم');
+			return msg.channel.send('I dont have perms to talk in this channel');
 		}
 		if (!permissions.has('SPEAK')) {
-			return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم');
+			return msg.channel.send('I dont have perms to talk in this channel');
 		}
 
 		if (!permissions.has('EMBED_LINKS')) {
-			return msg.channel.sendMessage("**يجب توآفر برمشن `EMBED LINKS`لدي **")
+			return msg.channel.sendMessage("**i cant send  `EMBED LINKS` **")
 		}
 
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
@@ -732,7 +697,7 @@ client.on('message', async msg => {
 				const video2 = await youtube.getVideoByID(video.id);
 				await handleVideo(video2, msg, voiceChannel, true);
 			}
-			return msg.channel.send(` **${playlist.title}** تم الإضآفة إلى قأئمة التشغيل`);
+			return msg.channel.send(` **${playlist.title}** added the the play list a new song `);
 		} else {
 			try {
 
@@ -742,7 +707,7 @@ client.on('message', async msg => {
 					var videos = await youtube.searchVideos(searchString, 5);
 					let index = 0;
 					const embed1 = new Discord.RichEmbed()
-			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
+			        .setDescription(`**plz pick a song number ** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 
 					.setFooter("sliver Bot")
@@ -756,66 +721,66 @@ ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 						});
 					} catch (err) {
 						console.error(err);
-						return msg.channel.send('لم يتم إختيآر مقطع صوتي');
+						return msg.channel.send('you didnt pick a song ');
 					}
 					const videoIndex = parseInt(response.first().content);
 					var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
 				} catch (err) {
 					console.error(err);
-					return msg.channel.send(':X: لا يتوفر نتآئج بحث ');
+					return msg.channel.send(':X:cant find anything ');
 				}
 			}
 
 			return handleVideo(video, msg, voiceChannel);
 		}
 	} else if (command === `skip`) {
-		if (!msg.member.voiceChannel) return msg.channel.send('أنت لست بروم صوتي .');
-		if (!serverQueue) return msg.channel.send('لا يتوفر مقطع لتجآوزه');
-		serverQueue.connection.dispatcher.end('تم تجآوز هذآ المقطع');
+		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice call .');
+		if (!serverQueue) return msg.channel.send('there is nothing to play next');
+		serverQueue.connection.dispatcher.end('new song coming up');
 		return undefined;
 	} else if (command === `stop`) {
-		if (!msg.member.voiceChannel) return msg.channel.send('أنت لست بروم صوتي .');
-		if (!serverQueue) return msg.channel.send('لا يتوفر مقطع لإيقآفه');
+		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice call  .');
+		if (!serverQueue) return msg.channel.send('there is nothing to play next');
 		serverQueue.songs = [];
-		serverQueue.connection.dispatcher.end('تم إيقآف هذآ المقطع');
+		serverQueue.connection.dispatcher.end('stoped ');
 		return undefined;
 	} else if (command === `vol`) {
-		if (!msg.member.voiceChannel) return msg.channel.send('أنت لست بروم صوتي .');
-		if (!serverQueue) return msg.channel.send('لا يوجد شيء شغآل.');
-		if (!args[1]) return msg.channel.send(`:loud_sound: مستوى الصوت **${serverQueue.volume}**`);
+		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice call .');
+		if (!serverQueue) return msg.channel.send('There is nothing playing.');
+		if (!args[1]) return msg.channel.send(`:loud_sound: the volume is  **${serverQueue.volume}**`);
 		serverQueue.volume = args[1];
 		serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 50);
-		return msg.channel.send(`:speaker: تم تغير الصوت الي **${args[1]}**`);
+		return msg.channel.send(`:speaker:vloume has been changed **${args[1]}**`);
 	} else if (command === `np`) {
-		if (!serverQueue) return msg.channel.send('لا يوجد شيء حالي ف العمل.');
+		if (!serverQueue) return msg.channel.send('There is no music on my list.');
 		const embedNP = new Discord.RichEmbed()
-	.setDescription(`:notes: الان يتم تشغيل : **${serverQueue.songs[0].title}**`)
+	.setDescription(`:notes: Now playing : **${serverQueue.songs[0].title}**`)
 		return msg.channel.sendEmbed(embedNP);
 	} else if (command === `queue`) {
 		
-		if (!serverQueue) return msg.channel.send('لا يوجد شيء حالي ف العمل.');
+		if (!serverQueue) return msg.channel.send('لThere is no music on my list.');
 		let index = 0;
 		
 		const embedqu = new Discord.RichEmbed()
 
 .setDescription(`**Songs Queue**
 ${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}
-**الان يتم تشغيل** ${serverQueue.songs[0].title}`)
+**Playing ** ${serverQueue.songs[0].title}`)
 		return msg.channel.sendEmbed(embedqu);
 	} else if (command === `pause`) {
 		if (serverQueue && serverQueue.playing) {
 			serverQueue.playing = false;
 			serverQueue.connection.dispatcher.pause();
-			return msg.channel.send('تم إيقاف الموسيقى مؤقتا!');
+			return msg.channel.send('Paused the music');
 		}
-		return msg.channel.send('لا يوجد شيء حالي ف العمل.');
+		return msg.channel.send('There is nothing playing.');
 	} else if (command === "resume") {
 		if (serverQueue && !serverQueue.playing) {
 			serverQueue.playing = true;
 			serverQueue.connection.dispatcher.resume();
-			return msg.channel.send('استأنفت الموسيقى بالنسبة لك !');
+			return msg.channel.send('resumed the song !');
 		}
-		return msg.channel.send('لا يوجد شيء حالي في العمل.');
+		return msg.channel.send('There is nothing playing.');
 	}
 
 	return undefined;
@@ -851,13 +816,13 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 		} catch (error) {
 			console.error(`I could not join the voice channel: ${error}`);
 			queue.delete(msg.guild.id);
-			return msg.channel.send(`لا أستطيع دخول هذآ الروم ${error}`);
+			return msg.channel.send(`i cant join the voice call ${error}`);
 		}
 	} else {
 		serverQueue.songs.push(song);
 		console.log(serverQueue.songs);
 		if (playlist) return undefined;
-		else return msg.channel.send(` **${song.title}** تم اضافه الاغنية الي القائمة!`);
+		else return msg.channel.send(` **${song.title}** added the song to the play list!`);
 	}
 	return undefined;
 }
@@ -882,7 +847,7 @@ function play(guild, song) {
 		.on('error', error => console.error(error));
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
-	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
+	serverQueue.textChannel.send(`Start playing  : **${song.title}**`);
 }
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
