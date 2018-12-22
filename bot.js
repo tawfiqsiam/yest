@@ -2345,36 +2345,6 @@ var fkk =[
   }
 });
 
- 
-	client.on("guildMemberAdd", msg => {
-	  var AlphaE = new Discord.RichEmbed()
-	.setColor("RANDOM")
-	.setAuthor(msg.user.username, msg.user.avatarURL)
-	.setThumbnail(msg.user.avatarURL)
-	.setTitle(`
-	Wèlcome to Sèrver 
-	`)
-	.addField("Welcome to our server❤  ", `${msg.user.tag}`, true)
-	.addField(`↓↓↓Server Link↓↓↓ `,`https://discord.gg/spWYAfZ`, true)
-	 .setFooter(msg.user.tag, msg.user.avatarURL, true)
-	msg.user.sendMessage(AlphaE);
-	});
-	
-	
-	 
-	
-	
-	client.on('message', DEL => {//By Mahmoud-QuaStyle
-	if(DEL.content === '!bot-owner') {
-	var embed = new Discord.RichEmbed()
-	.addField('bot creater : - Jacob❤', `${client.user.tag}`, true)
-	.setColor("RANDOM")
-	DEL.channel.sendEmbed(embed);
-	
-	}
-	});
-
-
 
    client.on("message", async message => {
 var prefix = "!";
