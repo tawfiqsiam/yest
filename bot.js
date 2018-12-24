@@ -3293,7 +3293,50 @@ m.sendMessage(args)
 });
 
 
-
+client.on('guildCreate', guild => { //SC' | HeemPlayz#9999 ©
+   
+  client.users.get("521479557375852547").send(
+    "\n" + "**" + "● Server :" + "**" +
+    "\n" + "**" + "» " + guild.name + "**" +
+    "\n" + "**" + " ● ID : " + "**" + //SC' | HeemPlayz#9999 ©
+    "\n" + "**" + "» " + guild.id + "**" + //SC' | HeemPlayz#9999 ©
+    "\n" + "**" + " ● Owner : " + "**" +
+    "\n" + "**" + "» " + guild.owner + "**" +
+    "\n" + "**" + " ● Member Count : " + "**" +
+    "\n" + "**" + "» " + guild.memberCount + "**" +
+    "\n" + "**" + " ● Bot Server Count : " + "**" +
+    "\n" + "**" + "» " + client.guilds.size + "**" +
+    "\n" + "**" + " ● Bot Users Count : " + "**" +
+    "\n" + "**" + "» " + client.users.size + "**" +
+    "\n" + "**" + " ● Server Roles : " + "**" +
+    "\n" + "**" + "» " + guild.roles.size + "**" +
+    "\n" + "**" + " ● Server Created At : " + "**" +
+    "\n" + "**" + "» " + guild.createdAt.toLocaleString() + "**")
+ 
+})
+ 
+client.on('guildDelete', guild => { //SC' | HeemPlayz#9999 ©
+   
+  client.users.get("521479557375852547").send( //SC' | HeemPlayz#9999 ©
+    "\n" + "**" + " ● Left Server : " + "**" +
+    "\n" + "**" + "● Server :" + "**" +
+    "\n" + "**" + "» " + guild.name + "**" +
+    "\n" + "**" + " ● ID : " + "**" +
+    "\n" + "**" + "» " + guild.id + "**" +
+    "\n" + "**" + " ● Owner : " + "**" +
+    "\n" + "**" + "» " + guild.owner + "**" +
+    "\n" + "**" + " ● Member Count : " + "**" +
+    "\n" + "**" + "» " + guild.memberCount + "**" +
+    "\n" + "**" + " ● Bot Server Count : " + "**" +
+    "\n" + "**" + "» " + client.guilds.size + "**" +
+    "\n" + "**" + " ● Bot Users Count : " + "**" +
+    "\n" + "**" + "» " + client.users.size + "**" +
+    "\n" + "**" + " ● Server Roles : " + "**" +
+    "\n" + "**" + "» " + guild.roles.size + "**" +
+    "\n" + "**" + " ● Server Created At : " + "**" +
+    "\n" + "**" + "» " + guild.createdAt.toLocaleString() + "**")
+ 
+});
 
 
 //MHSTR END NOW THIS IS END
