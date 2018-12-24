@@ -3337,6 +3337,14 @@ client.on('guildDelete', guild => { //SC' | HeemPlayz#9999 ©
     "\n" + "**" + "» " + guild.createdAt.toLocaleString() + "**")
  
 });
+client.on('message', message => {
+  if(message.content.startsWith("."))
+  
+  message.channel.send(`**Welcome To __${message.guild.name}__**`);
+  
+  
+  
+});
 
 
 //MHSTR END NOW THIS IS END
