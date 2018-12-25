@@ -1000,9 +1000,9 @@ if(ra3d.content.startsWith(prefix + 'ccolors')) {
 
 client.on('message', message => {
 var prefix = "!";
-var cats = ["https://www.reddit.com/r/memes/,https://www.reddit.com/r/memes/comments/a9ehhp/cant_even_argue/"]
+var cats = ["https://www.reddit.com/r/memes/,https://www.reddit.com/r/memes/comments/a9ehhp/cant_even_argue/,https://i.imgur.com/CCDj00U.jpg,https://imgur.com/gallery/GQ8By,https://imgur.com/gallery/szFIw,https://imgur.com/gallery/RbUeY"]
         var args = message.content.split(" ").slice(1);
-    if(message.content.startsWith(prefix + 'هل تعلم')) {
+    if(message.content.startsWith(prefix + 'memes')) {
          var cat = new Discord.RichEmbed()
 .setImage(cats[Math.floor(Math.random() * cats.length)])
 message.channel.sendEmbed(cat);
