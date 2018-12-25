@@ -3346,15 +3346,15 @@ client.on('message', message => {
   
 });
  client.on('message', msg => {//msg
-    if (msg.content === 'g!colors') {
-      msg.channel.send({file : "https://cdn.pg.sa/MFNLM5z8C8.jpg"})
+    if (msg.content === '!colors') {
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/524185262977318922/526343242216767488/colors.png"})
     }
   });;
 
 
 //////////////
  client.on('message', message => {
-      var prefix= "g!";
+      var prefix= "!";
 
       if(message.content === prefix + 'createcolors') {
                            if(!message.channel.guild) return message.channel.send('**This Commnad only For Servers !**'); 
