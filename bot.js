@@ -3160,7 +3160,7 @@ let antijoin = JSON.parse(fs.readFileSync('./antijoin.json' , 'utf8'));
  
  
 client.on('message', message => {
-    if(message.content.startsWith(prefix + "abda")) {
+    if(message.content.startsWith(prefix + "antijoin")) {
         if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
         if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**Sorry But You Dont Have Permission** `MANAGE_GUILD`' );
 antijoin[message.guild.id] = {
@@ -3180,7 +3180,7 @@ message.channel.send(`**✅ The AntiJoin Is __𝐎𝐍__ !**`)
  
  
 client.on('message', message => {
-    if(message.content.startsWith(prefix + "stoop")) {
+    if(message.content.startsWith(prefix + "stopantijoin")) {
         if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
         if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**Sorry But You Dont Have Permission** `MANAGE_GUILD`' );
 antijoin[message.guild.id] = {
@@ -3201,7 +3201,7 @@ message.channel.send(`**⛔ The AntiJoin Is __𝐎𝐅𝐅__ !**`)
           if (!message.channel.guild) return;
  
    let time = message.content.split(" ").slice(1);
-   if(message.content.startsWith(prefix + "setJoin")) {
+   if(message.content.startsWith(prefix + "setjoin")) {
        if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**Sorry But You Dont Have Permission** `MANAGE_GUILD`' );
 if(!time) return message.channel.send('Please Type The Account Created Time [Days]')
@@ -4059,6 +4059,43 @@ client.on('message', message => {
       }
       });
 
+client.on('message', message => {
+	          let args = message.content.split(' ').slice(1);
+	   if(message.content.split(' ')[0] == '#color'){
+	           const embedd = new Discord.RichEmbed()
+	     .setFooter('Requested by '+message.author.username, message.author.avatarURL)
+	   .setDescription(`**THere is no color with this name ** :x: `)
+	   .setColor(`ff0000`)
+	 
+	    if(!isNaN(args) && args.length > 0)
+	   
+	 
+	if    (!(message.guild.roles.find("name",`${args}`))) return  message.channel.sendEmbed(embedd);
+	 
+	 
+	       var a = message.guild.roles.find("name",`${args}`)
+	                if(!a)return;
+	const embed = new Discord.RichEmbed()
+	                   
+	     .setFooter('Requested by '+message.author.username, message.author.avatarURL)
+	   .setDescription(`**Done , You have new color . :white_check_mark: **`)
+	 
+	   .setColor(`${a.hexColor}`)
+	  message.channel.sendEmbed(embed);
+	          if (!args)return;
+	setInterval(function(){})
+	                  let count = 0;
+	                  let ecount = 0;
+	        for(let x = 1; x < 201; x++){
+	           
+	            message.member.removeRole(message.guild.roles.find("name",`${x}`))
+	         
+	            }
+	                message.member.addRole(message.guild.roles.find("name",`${args}`));
+	       
+	           
+	    }
+	});
 
 //MHSTR END NOW THIS IS END
 client.login(process.env.BOT_TOKEN);
