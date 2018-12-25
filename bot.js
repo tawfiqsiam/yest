@@ -287,7 +287,7 @@ client.on('message', async message => {
  
  
  
-e.edit("Send For how long do u want the channel between 2-18")
+e.edit("Send For how long do u want the channel between 2-180")
 var chaTime = message.channel.awaitMessages(filter, { max: 1, time: 20000, errors: ['time'] })
 .then(co => {
 if(isNaN(co.first().content)) return message.reply("Time only in Minutes");
@@ -366,7 +366,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`!help | !invite `,"http://twitch.tv/S-F")
+client.user.setGame(`say !help to get loved `,"http://twitch.tv/starZz#0001")
 client.user.setStatus("dnd")
 });
 
@@ -1000,7 +1000,7 @@ if(ra3d.content.startsWith(prefix + 'ccolors')) {
 
 client.on('message', message => {
 var prefix = "!";
-var cats = ["http://www.shuuf.com/shof/uploads/2015/09/09/jpg/shof_b9d73150f90a594.jpg","https://haltaalam.info/wp-content/uploads/2015/05/0.208.png","https://haltaalam.info/wp-content/uploads/2015/05/266.png","https://haltaalam.info/wp-content/uploads/2015/05/250.png","https://haltaalam.info/wp-content/uploads/2017/02/0.2517.png","https://pbs.twimg.com/media/CP0mi02UAAA3U2z.png","http://www.shuuf.com/shof/uploads/2015/08/31/jpg/shof_3b74fa7295ec445.jpg","http://www.shuuf.com/shof/uploads/2015/08/22/jpg/shof_fa3be6ab68fb415.jpg","https://pbs.twimg.com/media/CSWPvmRUcAAeZbt.png","https://pbs.twimg.com/media/B18VworIcAIMGsE.png"]
+var cats = ["https://www.reddit.com/r/memes/,https://www.reddit.com/r/memes/comments/a9ehhp/cant_even_argue/"]
         var args = message.content.split(" ").slice(1);
     if(message.content.startsWith(prefix + 'هل تعلم')) {
          var cat = new Discord.RichEmbed()
