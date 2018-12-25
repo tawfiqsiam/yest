@@ -513,6 +513,7 @@ can be used by staff only
 ,`
         ***__General orders__***
 **
+『!memes/to get fun pics!!!』
 『!allbots/Displays all bots to the server』
 『!server/Shows you information about the server』
 『!bot/Displays all bot information』
