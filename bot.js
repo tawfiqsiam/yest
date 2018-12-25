@@ -1000,7 +1000,7 @@ if(ra3d.content.startsWith(prefix + 'ccolors')) {
 
 client.on('message', message => {
 var prefix = "!";
-var cats = ["https://www.reddit.com/r/memes/","https://www.reddit.com/r/memes/comments/a9ehhp/cant_even_argue/","https://i.imgur.com/CCDj00U.jpg","https://imgur.com/gallery/GQ8By","https://imgur.com/gallery/szFIw,https://imgur.com/gallery/RbUeY"]
+var cats = ["https://i.imgur.com/L5vxSXT.jpg","https://i.imgur.com/BaLum84.jpg"]
         var args = message.content.split(" ").slice(1);
     if(message.content.startsWith(prefix + 'memes')) {
          var cat = new Discord.RichEmbed()
