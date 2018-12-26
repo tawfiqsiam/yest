@@ -430,7 +430,7 @@ client.on('ebnklb',function(ebnklb) {
     
     if(ebnklb.content.startsWith(`<@${client.user.id}>`)) {
         ebnklb.channel.send('Hey Im **Love System bot !**  A Nice Bot Developed By:`StarZz`')
-        `')
+       
 
     }
 });
