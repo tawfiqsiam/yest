@@ -3042,7 +3042,7 @@ client.on('message', message => {
   
 });
  client.on('message', msg => {//msg
-    if (msg.content === '!colors') {
+    if (msg.content === '.colors') {
       msg.channel.send({file : "https://cdn.discordapp.com/attachments/524185262977318922/526343242216767488/colors.png"})
     }
   });;
@@ -3050,7 +3050,7 @@ client.on('message', message => {
 
 //////////////
  client.on('message', message => {
-      var prefix= "!";
+      var prefix= ".";
 
       if(message.content === prefix + 'createcolors') {
                            if(!message.channel.guild) return message.channel.send('**This Commnad only For Servers !**'); 
@@ -3757,7 +3757,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 	          let args = message.content.split(' ').slice(1);
-	   if(message.content.split(' ')[0] == '!color'){
+	   if(message.content.split(' ')[0] == '.color'){
 	           const embedd = new Discord.RichEmbed()
 	     .setFooter('Requested by '+message.author.username, message.author.avatarURL)
 	   .setDescription(`**THere is no color with this name ** :x: `)
