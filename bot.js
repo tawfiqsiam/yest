@@ -856,20 +856,20 @@ client.on('message', message => {
     
 if (message.content.startsWith(adminprefix + 'setgame')) {
   client.user.setGame(argresult);
-    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
+    message.channel.sendMessage(`**${argresult} new bot playing **`)
 } else 
   if (message.content.startsWith(adminprefix + 'setname')) {
 client.user.setUsername(argresult).then
-    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
-return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
+    message.channel.sendMessage(`**${argresult}** : new name`)
+return message.reply("**you have to wait 2 hours . **");
 } else
   if (message.content.startsWith(adminprefix + 'setavatar')) {
 client.user.setAvatar(argresult);
-  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
+  message.channel.sendMessage(`**${argresult}** :new bot avatar`);
       } else     
 if (message.content.startsWith(adminprefix + 'setT')) {
   client.user.setGame(argresult, "https://www.twitch.tv/idk");
-    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
+    message.channel.sendMessage(`**the bot is streaming  ${argresult}**`)
 }
 });
 
@@ -982,25 +982,10 @@ console.log('[38ab] Send By: ' + message.author.username)
   }
 });
 
-client.on('message', ra3d => {
-var prefix = "!";
-                        let args = ra3d.content.split(" ").slice(1).join(" ")
-if(ra3d.content.startsWith(prefix + 'ccolors')) {
-    if(!args) return ra3d.channel.send('`يرجي اختيار كم لون `');
-             if (!ra3d.member.hasPermission('MANAGE_ROLES')) return ra3d.channel.sendMessage('`**⚠ | `[MANAGE_ROLES]` لا يوجد لديك صلاحية**'); 
-              ra3d.channel.send(`**✅ |Created __${args}__ Colors**`);
-                  setInterval(function(){})
-                    let count = 0;
-                    let ecount = 0;
-          for(let x = 1; x < `${parseInt(args)+1}`; x++){
-            ra3d.guild.createRole({name:x,
-              color: 'RANDOM'})
-              }
-            }
-       });
+
 
 client.on('message', message => {
-var prefix = "!";
+var prefix = ".";
 var cats = ["http://www.quickmeme.com/img/33/33fcc5902b7c3d9c36f2f53cc4e0c4ad988ca13aaf7c7cb387dc9f8342e7cfc4.jpg","https://i.pinimg.com/236x/20/9d/35/209d350367e0f8549523fbdf649d65e0--overly-obsessed-girlfriend-overly-attached-girlfriend.jpg","http://4.bp.blogspot.com/-b83asye0c4E/UcgpNa6brWI/AAAAAAAAAC0/UXPxt_zfmJE/s1600/I-know-youll-never-leave-me-or-something-bad-will-happen-to-you-and-your-family-overly-attached-girlfriend-31503123-420-334.png","https://i.pinimg.com/236x/1a/1f/34/1a1f340dbf564a607b3d8d49270ecd93--overly-attached-girlfriend-overly-obsessed-girlfriend.jpg","https://i.pinimg.com/236x/0e/ec/4f/0eec4f0f9e0610b2aa8b224bd2be2954--obsessed-girlfriend-girlfriend-meme.jpg","https://i.imgflip.com/23tz4y.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGbdcyYFBkIkywt4S91hXfkJPTOiZzPHbX0umiJ4OC94lc-ytM","https://akns-images.eonline.com/eol_images/Entire_Site/2016813/rs_300x300-160913131825-600-hey-girl2.jpg?fit=inside%7C900:auto&output-quality=90","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8cCYp-_mlh77k0_RRSC8AtSRbPXD_LIfY_--kfXp-rdgYgMKW","https://pbs.twimg.com/media/Ds5MdoCXgAEYv40.jpg","http://cdn.thefunnybeaver.com/wp-content/uploads/2018/08/funny-parents-reaction.jpg","https://i.kym-cdn.com/entries/icons/original/000/025/895/highschool.jpg","https://i.pinimg.com/originals/f6/68/82/f6688240d3b648a55331092e1e3f0f47.jpg","https://steemitimages.com/DQmSgkdWrktkfPHwGX32LcvVdaxVhE4rWiFXxg9EFPr84rV/scared.jpg","https://img.memecdn.com/Studying-or-Derping_o_105709.jpg","http://redbankvalleynews.com/wp-content/uploads/2018/01/school18.jpg","https://exodus-themesurgesonslt.netdna-ssl.com/wp-content/uploads/2017/02/meme-2-funny-school-memes-quotes-studying.jpg","https://pics.me.me/my-reaction-when-myhusband-asks-where-all-the-money-went-5968571.png","https://winkgo.com/wp-content/uploads/2016/08/31-Things-Only-Teachers-Understand-21-720x720.jpg","https://4.bp.blogspot.com/-JdQBYdpwyh4/WXD62kQuJoI/AAAAAAAAIkU/atTON-OeRGkt546Fopkk4gJ9qUYGO-AEwCLcBGAs/s1600/teachers-change-the-5970fa.jpg","https://i.imgflip.com/2e1sx1.jpg","https://imgix.bustle.com/rehost/2016/9/13/a837fb12-6da5-4a2c-9a61-609b3fc8b7d4.jpg?w=970&h=582&fit=crop&crop=faces&auto=format&q=70","https://i.pinimg.com/736x/f4/a5/59/f4a5591bfa8aa3976a424e32d41f4116--stalin-memes-chinese-memes.jpg","https://jokideo.com/wp-content/uploads/meme/2014/11/You-go-to-school---meme.jpg","http://images6.fanpop.com/image/photos/39000000/School-Funny-Meme-best-nakamas-39018324-495-545.jpg","https://sayingimages.com/wp-content/uploads/when-my-teacher-asks-funny-school-memes.jpg","https://i.kym-cdn.com/photos/images/original/000/150/971/163904_482412602269_147897627269_5573889_1065822_n.jpg","https://i.kym-cdn.com/photos/images/original/000/150/971/163904_482412602269_147897627269_5573889_1065822_n.jpg","http://www.quickmeme.com/img/36/364a4ded2b7a9b70212c903df9c23c8ceb434f5a4e8cf38218069cba4d19fe97.jpg","https://www.lifewire.com/thmb/aYH76dOw1vH7SGadn3h-7q0lIJ8=/1600x1200/filters:no_upscale():max_bytes(150000):strip_icc()/schoolmemes1-5ad79b303de4230037389015.jpg","https://www.postplanner.com/hs-fs/hub/513577/file-2882290147-png/blog-files/screen-shot-2013-11-28-at-3.01.23-pm.png?width=384&height=344&name=screen-shot-2013-11-28-at-3.01.23-pm.png","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3fqHyNvCqcg3tHqMw3Sem42MmdltJHHeQFoAgag2tcCBNowvXXQ","http://www.rockamador.org/wp-content/uploads/2018/11/Baptism.jpg","https://i.pinimg.com/236x/87/91/28/879128049679eddbff7ef42275c382c6--fun-stuff-funny-things.jpg","https://i.pinimg.com/236x/0e/0c/3c/0e0c3c53920ae13470037c21dd9f79ff--so-funny-funny-stuff.jpg","https://i.pinimg.com/236x/d1/54/66/d15466e65c45716c965574eadec9f0b4--funny-things-funny-stuff.jpg","http://cdn.lifebuzz.com/images/192973/lifebuzz-026201e81f4314d232913a72141762b7-limit_2000.jpg","https://i.pinimg.com/236x/56/7a/c7/567ac7805a8b3ce9e18432d1c32d1e31--funny-mother-quotes-funny-kids.jpg","https://me.me/i/004d5d4bd01948aeb310d34cee93351b","https://me.me/i/in-order-to-insult-me-i-must-first-value-your-2905368","https://list25.com/wp-content/uploads/2013/10/kfc-610x458.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyXA-_reHSmVwMgAiaiYlyf5H9RiFGV4gfgKiRpbBiHCyqtS2_","http://www.quickmeme.com/img/a7/a7a90608c8e194f23bf663ba9d20f5c89931938ab6c363288af5f8d40c81437a.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr6XZ-2CMloK6g2JdmUtFWQryXwsedZZ3-jkMHxzJG2Z_JV1k6","https://pics.me.me/your-lack-of-dedication-is-an-insult-to-those-ho-21312433.png","http://happybirthdayworld.net/wp-content/uploads/2018/05/inappropriate-birthday-memes-6.jpg","http://www.humorandmemes.com/wp-content/uploads/2016/06/13321799_1757086451174071_1204451757994461256_n.jpg","http://1.bp.blogspot.com/-Ba2OSWuaoHQ/VCjLivL7kZI/AAAAAAAAAZM/T7VU0tcIPrA/s1600/B10.jpg","https://i.pinimg.com/originals/b7/44/49/b7444944a2094d0ce26c34ac72f18a8f.png","https://me.me/i/in-order-to-insult-me-i-must-first-value-your-2905368","https://img.memecdn.com/darth-vader-insults-your-mom_o_1033982.jpg","https://img.memecdn.com/so-u-wanna-insult-my-favorite-music-artist-band-huh-ok-well-here-hold-this_o_1544859.jpg","https://i.imgur.com/L5vxSXT.jpg","https://i.imgur.com/BaLum84.jpg","https://imgur.com/gallery/qOlpA","https://i.imgur.com/m2JRu2k.jpg","https://i.imgur.com/0Qwx4Bv.jpg","https://i.imgur.com/W04OQCb.jpg","https://i.imgur.com/V5w8DFl.jpg","https://i.imgur.com/n4XCmN1.jpg","https://i.imgur.com/XbF8bhV.jpg","https://i.imgur.com/jVDngQg.jpg","https://i.imgur.com/njgA2PV.jpg","https://i.imgur.com/nvtxDUn.jpg","https://i.imgur.com/nvtxDUn.jpg","https://i.imgur.com/i1xaByo.jpg","https://i.imgur.com/mIe6xRY.jpg","https://imgix.ranker.com/user_node_img/50065/1001280631/original/dr-no-chill-photo-u1?w=650&q=50&fm=jpg&fit=crop&crop=faces","https://imgur.com/t/funny/FqB0bHw","https://imgix.ranker.com/user_node_img/50056/1001100543/original/c-photo-u1?w=650&q=50&fm=jpg&fit=crop&crop=faces","https://weheartit.com/entry/82734074","https://list25.com/wp-content/uploads/2013/10/rubbery-610x405.jpg","https://list25.com/wp-content/uploads/2013/10/shock-me-610x458.jpg","https://list25.com/wp-content/uploads/2013/10/keep-rolling-610x458.jpg","https://list25.com/wp-content/uploads/2013/10/proof-1-610x328.jpg","https://list25.com/wp-content/uploads/2013/10/slap-1-610x766.jpg","https://list25.com/wp-content/uploads/2013/10/slap-1-610x766.jpg","https://list25.com/wp-content/uploads/2013/10/bury-610x458.jpg","https://list25.com/wp-content/uploads/2013/10/frankenstein-610x458.jpg","https://list25.com/wp-content/uploads/2013/10/draw-610x457.jpg"]
         var args = message.content.split(" ").slice(1);
     if(message.content.startsWith(prefix + 'meme')) {
@@ -1055,66 +1040,10 @@ const zead = [
    '*** احد ما خرج من المنزل ***',
    '*** انتظر الجزء الثاني عندما يوصل البوت 100 سيرفر , ساعدني في نشر البوت وادخل هذا السيرفر  ***'
 ];
- client.on('message', message => {
- if (message.content.startsWith('!مريم')) {
-  var mariam= new Discord.RichEmbed()
-  .setTitle("لعبة مريم ..")
-  .setColor('RANDOM')
-  .setDescription(`${zead[Math.floor(Math.random() * zead.length)]}`)
-  .setImage("https://www.npa-ar.com/wp-content/uploads/2017/08/%D9%84%D8%B9%D8%A8%D8%A9-%D9%85%D8%B1%D9%8A%D9%85-300x200.jpg")
-   message.channel.sendEmbed(mariam);
-  }
-});
-
-const Langs = ['afrikaans', 'albanian', 'amharic', 'arabic', 'armenian', 'azerbaijani', 'bangla', 'basque', 'belarusian', 'bengali', 'bosnian', 'bulgarian', 'burmese', 'catalan', 'cebuano', 'chichewa', 'chinese simplified', 'chinese traditional', 'corsican', 'croatian', 'czech', 'danish', 'dutch', 'english', 'esperanto', 'estonian', 'filipino', 'finnish', 'french', 'frisian', 'galician', 'georgian', 'german', 'greek', 'gujarati', 'haitian creole', 'hausa', 'hawaiian', 'hebrew', 'hindi', 'hmong', 'hungarian', 'icelandic', 'igbo', 'indonesian', 'irish', 'italian', 'japanese', 'javanese', 'kannada', 'kazakh', 'khmer', 'korean', 'kurdish (kurmanji)', 'kyrgyz', 'lao', 'latin', 'latvian', 'lithuanian', 'luxembourgish', 'macedonian', 'malagasy', 'malay', 'malayalam', 'maltese', 'maori', 'marathi', 'mongolian', 'myanmar (burmese)', 'nepali', 'norwegian', 'nyanja', 'pashto', 'persian', 'polish', 'portugese', 'punjabi', 'romanian', 'russian', 'samoan', 'scottish gaelic', 'serbian', 'sesotho', 'shona', 'sindhi', 'sinhala', 'slovak', 'slovenian', 'somali', 'spanish', 'sundanese', 'swahili', 'swedish', 'tajik', 'tamil', 'telugu', 'thai', 'turkish', 'ukrainian', 'urdu', 'uzbek', 'vietnamese', 'welsh', 'xhosa', 'yiddish', 'yoruba', 'zulu'];
-
-client.on('message', message => {
-	var prefix = "!";
-if (message.content.startsWith(prefix + 'trans')) {
-    let args = message.content.split(" ").slice(1);
-    if (!args[0]) {
-    
-        const embed = new Discord.RichEmbed()
-            .setColor("FFFFFF")
-            .setDescription("**ترجمة الكتابة.**\استعمل: `-translate <الكلمة لتبي> <االغة>`");
-
-        return message.channel.send(embed);
-
-    } else {
-
-        if (args.length === undefined) {
-
-            return message.channel.send("**ترجمة الكتابة.**\استعمل: `-translate <الكلمة لتبي> <االغة>`");
-
-        } else {
-
-            let transArg = args[0].toLowerCase();
-
-            args = args.join(' ').slice(1)
-            let translation;
-
-            if (!Langs.includes(transArg)) return message.channel.send(`**Language not found.**`);
-            args = args.slice(transArg.length);
-
-            translate(args, {
-                to: transArg
-            }).then(res => {
-
-                const embed = new Discord.RichEmbed()
-                    .setAuthor("Translator", client.user.displayAvatarURL)
-                    .addField(`Input`, `\`\`\`${args}\`\`\``)
-                    .setColor("#42f4c8")
-                    .addField(`Output`, `\`\`\`${res.text}\`\`\``);
-                return message.channel.send(embed);
-            });
-        }
-    }
-}
-});
-
+ c
 client.on('message', message => {
      if(!message.channel.guild) return;
-var prefix = "!";
+var prefix = ".";
                 if(message.content.startsWith(prefix + 'allbots')) {
 
     
@@ -1136,7 +1065,7 @@ message.channel.send(embed)
 
 
 client.on("message", function(message) {
-	var prefix = "!";
+	var prefix = ".";
    if(message.content.startsWith(prefix + "rps")) {
     let messageArgs = message.content.split(" ").slice(1).join(" ");
     let messageRPS = message.content.split(" ").slice(2).join(" ");
@@ -1202,7 +1131,7 @@ message.channel.sendEmbed(embed)
 });
 
 client.on("message",function(message) {
-	var prefix = "!";
+	var prefix = ".";
     if(message.content.startsWith(prefix + 'bot')) {
         var uptime = client.uptime;
  
@@ -1242,13 +1171,13 @@ client.on("message",function(message) {
 var v1 = new Discord.RichEmbed()
   v1.setTimestamp(new Date())
   v1.setColor("#6a109d")
-  v1.setDescription('***__ انتظر .. جاري الحصول علي البيانات __***')
-  v1.setFooter("# | Sliver TeaM |")
+  v1.setDescription('***__ Working on it plz wait!!!! __***')
+  v1.setFooter("# | ProXima TeaM |")
 var heroo = new Discord.RichEmbed()
 .setColor('#6a109d')
 .setTimestamp(new Date())
 .setThumbnail(client.user.avatarURL)
-.setTitle('SLiver Bot Info')
+.setTitle('ProXima Bot Info')
 .setURL('https://discordapp.com/oauth2/authorize?client_id=471464656242737183&permissions=2080898225&scope=bot')
 .setAuthor(client.user.username,client.user.avatarURL)
 .addField("**prefix** :",`**[ ${prefix} ]**`,true)
@@ -1259,7 +1188,7 @@ var heroo = new Discord.RichEmbed()
 .addField("**bot id  **:","**[ "+client.user.id+" ]**",true)
 .addField("**Memory usage ** :",`**[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]**`,true)
 .addField("**up time** :",`**[** **Days:** \`${days}\` **Hours:** \`${hours}\` **Minutes:** \`${minutes}\` **Seconds:** \`${seconds}\` **]**`,true)
-.setFooter("Love System  |");
+.setFooter("ProXima");
   message.channel.send({embed:v1}).then(m => {
       setTimeout(() => {
          m.edit({embed:heroo});
@@ -1268,7 +1197,7 @@ var heroo = new Discord.RichEmbed()
 }
 });
 client.on("message", message => {
-    var prefix = "!"
+    var prefix = "."
     if (!message.content.startsWith(prefix)) return;
       let command = message.content.split(" ")[0];
       command = command.slice(prefix.length);
@@ -1282,7 +1211,7 @@ client.on("message", message => {
 
 
 client.on('message', message => {
-    if(message.content == ('!profile')) {    
+    if(message.content == ('.profile')) {    
  
              if (message.channel.type === 'dm') return message.reply('This Command Is Not Avaible In Dm\'s :x:');   
             var Canvas = module.require('canvas');
@@ -1352,7 +1281,7 @@ client.on('message', message => {
                                                                              ctx.fillText(`${getvalueof.username}`,655, 170);
                                                                             
                                                                         
-                                                          moment.locale('ar-ly');        
+                                                          moment.locale('en-uk');        
                                             
                                             
                                                                     ctx.font = '30px Arial';
@@ -1407,12 +1336,12 @@ client.on('message', message => {
  });
 
 client.on('message', message => {
-	var prefix = "!";
+	var prefix = ".";
 if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'move')) {
  if (message.member.hasPermission("MOVE_MEMBERS")) {
  if (message.mentions.users.size === 0) {
- return message.channel.send("``لاستخدام الأمر اكتب هذه الأمر : " +prefix+ "move [USER]``")
+ return message.channel.send("``how to use : " +prefix+ "move [USER]``")
 }
 if (message.member.voiceChannel != null) {
  if (message.mentions.members.first().voiceChannel != null) {
@@ -1421,7 +1350,7 @@ if (message.member.voiceChannel != null) {
 var embed = new Discord.RichEmbed()
  .setTitle("Succes!")
  .setColor("#000000")
- .setDescription(`لقد قمت بسحب <@${usermentioned}> الى الروم الصوتي الخاص بك✅ `)
+ .setDescription(`you have moved <@${usermentioned}> to your voice call✅ `)
 var embed = new Discord.RichEmbed()
 .setTitle(`You are Moved in ${message.guild.name}`)
  .setColor("RANDOM")
@@ -1429,10 +1358,10 @@ var embed = new Discord.RichEmbed()
  message.guild.members.get(usermentioned).setVoiceChannel(authorchannel).then(m => message.channel.send(embed))
 message.guild.members.get(usermentioned).send(embed)
 } else {
-message.channel.send("``لا تستطيع سحب "+ message.mentions.members.first() +" `يجب ان يكون هذه العضو في روم صوتي`")
+message.channel.send("``you cant move "+ message.mentions.members.first() +" `the user must be in voice call`")
 }
 } else {
- message.channel.send("**``يجب ان تكون في روم صوتي لكي تقوم بسحب العضو أليك``**")
+ message.channel.send("**``you have to be in voice call ``**")
 }
 } else {
 message.react("❌")
@@ -1440,7 +1369,7 @@ message.react("❌")
 
  client.on('message', message => {
               if (!message.channel.guild) return;
-      if(message.content =='!count')
+      if(message.content =='.count')
       var IzRo = new Discord.RichEmbed()
       .setThumbnail(message.author.avatarURL)
       .setFooter(message.author.username, message.author.avatarURL)
@@ -1466,7 +1395,7 @@ if(message.content === `${prefix}voiceonline`) {
 
 client.on("message", async message => {
             if(!message.channel.guild) return;
-            var prefix = "!";
+            var prefix = ".";
         if(message.content.startsWith(prefix + 'invites')) {
         var nul = 0
         var guild = message.guild
@@ -1482,7 +1411,7 @@ client.on("message", async message => {
               console.log(`\n${message.author.tag} has ${nul} invites in ${guild.name}\n`)
               var embed = new Discord.RichEmbed()
                   .setColor("#000000")
-                    .addField(`${message.author.username}`, `you have invited **${nul}** شخص`)
+                    .addField(`${message.author.username}`, `you have invited **${nul}** user`)
                           message.channel.send({ embed: embed });
                       return;
                     } else {
@@ -1524,7 +1453,7 @@ return;
 });
 
 client.on('message', msg => {
-	var  prefix = "!";
+	var  prefix = ".";
  if (msg.content.startsWith(prefix + 'cal')) {
     let args = msg.content.split(" ").slice(1);
         const question = args.join(' ');
@@ -1546,7 +1475,7 @@ client.on('message', msg => {
 });
 
 client.on('message', message => { 
-	var prefix = "!";
+	var prefix = ".";
  let args = message.content.split(' ').slice(1);
     if(message.content.startsWith(prefix + 'short')) {
     if(!message.channel.guild) return;  
@@ -1563,10 +1492,10 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-	var prefix = "!";
+	var prefix = ".";
 if (message.content.startsWith(prefix + 'tag')) {
     let args = message.content.split(" ").slice(1);
-if(!args[0]) return message.reply('مرجو كتابة نص الدي تريد');  
+if(!args[0]) return message.reply('say something');  
 
     figlet(args.join(" "), (err, data) => {
               message.channel.send("```" + data + "```")
@@ -1575,7 +1504,7 @@ if(!args[0]) return message.reply('مرجو كتابة نص الدي تريد');
 });
 
 client.on('message', message => {
-	var prefix ="!";
+	var prefix =".";
  let args = message.content.split(' ').slice(1);
     if(message.content.startsWith(prefix + 'google')) {
     const input = args.join(' ');
@@ -1623,7 +1552,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(` System Bot | Abdellhadi`,"http://twitch.tv/S-F")
+client.user.setGame(` ProXima Bot | .help`,"http://twitch.tv/S-F")
 client.user.setStatus("dnd")
 });
 
@@ -1992,7 +1921,7 @@ msg.channel.send(embed).then(() => {
 
 
 client.on('message', message => {
-  var prefix ="!"; 
+  var prefix ="."; 
 if (message.content.startsWith(prefix + 'perms')) {
          if(!message.channel.guild) return;
          var perms = JSON.stringify(message.channel.permissionsFor(message.author).serialize(), null, 4);
@@ -2007,7 +1936,7 @@ if (message.content.startsWith(prefix + 'perms')) {
 
 
  client.on('message', message => {
-	 var prefix = "!";
+	 var prefix = ".";
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -2018,7 +1947,7 @@ if (message.content.startsWith(prefix + 'perms')) {
   
  
 
-if (command == "za5") {
+if (command == "fancy") {
     let say = new Discord.RichEmbed()
         .setTitle('Text emboss :')
    message.channel.send(`\n ${zalgo(args.join(' '))}`);
@@ -2027,55 +1956,55 @@ if (command == "za5") {
 });
 
 client.on("message", message => {
-	var prefix = "!";
+	var prefix = ".";
 	var args = message.content.split(' ').slice(1); 
 	var msg = message.content.toLowerCase();
 	if( !message.guild ) return;
 	if( !msg.startsWith( prefix + 'role' ) ) return;
-	if(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(' **__ليس لديك صلاحيات__**');
+	if(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(' **__You dont have perms__**');
 	if( msg.toLowerCase().startsWith( prefix + 'roleremove' ) ){
-		if( !args[0] ) return message.reply( '**:x: يرجى وضع الشخص المراد سحب منه الرتبة**' );
-		if( !args[1] ) return message.reply( '**:x: يرجى وضع الرتبة المراد سحبها من الشخص**' );
+		if( !args[0] ) return message.reply( '**:x: pls pemtion the user**' );
+		if( !args[1] ) return message.reply( '**:x: what is the role name**' );
 		var role = msg.split(' ').slice(2).join(" ").toLowerCase(); 
 		var role1 = message.guild.roles.filter( r=>r.name.toLowerCase().indexOf(role)>-1 ).first(); 
-		if( !role1 ) return message.reply( '**:x: يرجى وضع الرتبة المراد سحبها من الشخص**' );if( message.mentions.members.first() ){
+		if( !role1 ) return message.reply( '**:x: what is the role name**' );if( message.mentions.members.first() ){
 			message.mentions.members.first().removeRole( role1 );
-			return message.reply('**:white_check_mark: [ '+role1.name+' ] رتبة [ '+args[0]+' ] تم سحب من **');
+			return message.reply('**:white_check_mark: [ '+role1.name+' ] role [ '+args[0]+' ] removed **');
 		}
 		if( args[0].toLowerCase() == "all" ){
 			message.guild.members.forEach(m=>m.removeRole( role1 ))
-			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم سحب من الكل رتبة**');
+			return	message.reply('**:white_check_mark: [ '+role1.name+' ] removed everyone from the role**');
 		} else if( args[0].toLowerCase() == "bots" ){
 			message.guild.members.filter(m=>m.user.bot).forEach(m=>m.removeRole(role1))
-			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم سحب من البوتات رتبة**');
+			return	message.reply('**:white_check_mark: [ '+role1.name+' ] removed all the bots from the role**');
 		} else if( args[0].toLowerCase() == "humans" ){
 			message.guild.members.filter(m=>!m.user.bot).forEach(m=>m.removeRole(role1))
-			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم سحب من البشريين رتبة**');
+			return	message.reply('**:white_check_mark: [ '+role1.name+' ] removed all humans from the role**');
 		} 	
 	} else {
-		if( !args[0] ) return message.reply( '**:x: يرجى وضع الشخص المراد اعطائها الرتبة**' );
-		if( !args[1] ) return message.reply( '**:x: يرجى وضع الرتبة المراد اعطائها للشخص**' );
+		if( !args[0] ) return message.reply( '**:x: pls pemtion the user**' );
+		if( !args[1] ) return message.reply( '**:x: what is the role name**' );
 		var role = msg.split(' ').slice(2).join(" ").toLowerCase(); 
 		var role1 = message.guild.roles.filter( r=>r.name.toLowerCase().indexOf(role)>-1 ).first(); 
-		if( !role1 ) return message.reply( '**:x: يرجى وضع الرتبة المراد اعطائها للشخص**' );if( message.mentions.members.first() ){
+		if( !role1 ) return message.reply( '**:x: what is the role name**' );if( message.mentions.members.first() ){
 			message.mentions.members.first().addRole( role1 );
-			return message.reply('**:white_check_mark: [ '+role1.name+' ] رتبة [ '+args[0]+' ] تم اعطاء **');
+			return message.reply('**:white_check_mark: [ '+role1.name+' ] role [ '+args[0]+' ] added  **');
 		}
 		if( args[0].toLowerCase() == "all" ){
 			message.guild.members.forEach(m=>m.addRole( role1 ))
-			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء الكل رتبة**');
+			return	message.reply('**:white_check_mark: [ '+role1.name+' ] added to everyone**');
 		} else if( args[0].toLowerCase() == "bots" ){
 			message.guild.members.filter(m=>m.user.bot).forEach(m=>m.addRole(role1))
-			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء البوتات رتبة**');
+			return	message.reply('**:white_check_mark: [ '+role1.name+' ] added to the bots**');
 		} else if( args[0].toLowerCase() == "humans" ){
 			message.guild.members.filter(m=>!m.user.bot).forEach(m=>m.addRole(role1))
-			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء البشريين رتبة**');
+			return	message.reply('**:white_check_mark: [ '+role1.name+' ] added to humans**');
 		} 
 	} 
 });
 
 client.on('message', message => {
-    if (message.content === "!rooms") {
+    if (message.content === "channels") {
         if (message.author.bot) return
                       if (!message.guild) return;
 
@@ -2085,7 +2014,7 @@ client.on('message', message => {
         .addField(`${message.guild.name}`,`**Rooms:white_check_mark:**`)
         .addField(':arrow_down: Rooms Number. :heavy_check_mark:',`** ${message.guild.channels.size}**`)
         
-.addField(':arrow_down:Rooms  Name. :heavy_check_mark::',`**[${channels}]**`)
+.addField(':arrow_down:channels  Name. :heavy_check_mark::',`**[${channels}]**`)
         message.channel.sendEmbed(embed);
     }
 });
@@ -2093,7 +2022,7 @@ client.on('message', message => {
 var AsciiTable = require('ascii-data-table').default
 client.on('message', message =>{
 
-    if(message.content == "!roles"){
+    if(message.content == ".roles"){
         var 
         ros=message.guild.roles.size,
         data = [['Rank', 'RoleName']]
@@ -2112,7 +2041,7 @@ client.on('ready', () => {
   });
 
 client.on('message', message => {
-var prefix = "!";
+var prefix = ".";
       if(message.content === prefix + "hchannel") {
       if(!message.channel.guild) return;
       if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('You Dont Have Perms :x:');
@@ -2125,7 +2054,7 @@ var prefix = "!";
 
 
 client.on('message', message => {
-var prefix = "!";
+var prefix = ".";
       if(message.content === prefix + "schannel") {
       if(!message.channel.guild) return;
       if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':x:');
@@ -2138,11 +2067,11 @@ var prefix = "!";
 
 
 client.on('message', message => {
-    if (message.content == "!quas") {
+    if (message.content == ".HQ") {
          message.react('🤔','👌')
-        var x = ['اين يلعب مصطفي فتحي؟', 'ما هو اسم ملعب بارشالونة', 'ما هو يوم الحج الأكبر؟', 'ما هو أطول أنهار أوربا ؟', 'ما هو اسم بيت الدجاج', 'ما هو أول بنك قام بالنشاط المصرفي في السعودية عام 1926م' , 'ما هو أول جامع أقيم في مصر','ما هو أطول نهر في آسيا','ما هو أقرب كوكب إلى الشمس','ما هو الحيوان الذي يُسمى البهنس','ما هو اول مسجد أسس بالمدينة','متى وقع صلح الحديبية عام 6هـ او 3هـ او 2هـ؟','متى قامت أمريكا بأول رحلة فضائية','متى كانت غزوة خيبر؟','ما هي السورة التي تبدأ بقوله تعالى " يا أيها النبي اتق الله ولا تطع الكافرين والمنافقين إن الله كان عليما حكيما ".اجب؟','ما هي السورة التي يطلق عليها عروس القرآن','ماذا يسمى من لايقرأ ولايكتب','ماهي أول دولة استخدمت طابع البريد','ماهو شعار الولايات المتحدة الامريكية','ماهو اذكي الحيوانات','من هو مكتشف أمريكا','مامعنى "فرعون" اجب؟','ماهو اقرب كوكب إلى الارض','ما هي نسبه المياه من الكره الارضيه?','كم عدد السجدات في القرآن الكريم؟','من هو بطل كاس العالم في عام 1966','أين أفتتح اول متحف في العالم?','ماأسم أنثى الحمار?','كم تبلغ درجه حراره الشمس؟','من هي مدينة الضباب','أين توجد أطول سكة حديد في العالم?'
+        var x = ['What is the name of the barchalona Stadium', 'What is the longest river in Europe?', 'What is the name of the chicken house','What is the longest river in Asia','What is the nearest planet to the sun',','When America made the first space flight','What is called who does not read and do not write','What is the first country to use the postage stamp','What is the slogan of the United States of America','What is the smartest animal','Who is the discoverer of America?','What is the meaning of "Pharaoh" ?','What is the nearest planet to the earth?','What is the water ratio of the ball?','Who is the champion of the World Cup in 1966','Where I open the first museum in the world??','How much is the temperature of the sun?','what is called the city of fog','Where is the longest railway in the world?'
         ];
-        var x2 = ['التعاون', 'كامب نو', 'يوم النحر', 'الدانوب', 'قن', 'البنك الهولندي', 'جامع عمرو بن العاص','اليانجستي','عطارد','الاسد','مسجد قباء','6','سنة 1962','عام 7هـ','الاحزاب','سورة الرحمن','امي','بريطانيا','النسر الاصلع','الدلفين','كولمبس','البيت الكبير','الزهره','71%','15 سجدة','انكلترا ','القاهرة','الاتان','15 مليون درجه مئوية','لندن','كندا'
+        var x2 = ['Camp Nou', 'Danube', 'chicken house','Mercury',' 1962','illiterate','UK','The bald eagle','dolphin','Columbus','big house','Venus','71%','England ','Cairo','15 million','London','Canada',
         ];
 	    var x3 = Math.floor(Math.random()*x.length)
         message.channel.send(`📢 امامك دقيقة لحل الاسئلة , السؤال يقول :  __**${x[x3]}**__ `).then(msg1=> {
@@ -2182,7 +2111,7 @@ let prefix = '!'
 });
 
 client.on('message',function(message) {
-	let prefix = "!";
+	let prefix = ".";
 let args = message.content.split(" ").slice(1).join(" ");
 if(message.content.startsWith(prefix + "say")) {
 if(!args) return;
@@ -2194,7 +2123,7 @@ message.channel.send(`**# ${args}**`); // محطوط # عشان محد يستخ�
 
 client.on('message', async message =>{
   if (message.author.boss) return;
-	var prefix = "!";
+	var prefix = ".";
 
 if (!message.content.startsWith(prefix)) return;
 	let command = message.content.split(" ")[0];
