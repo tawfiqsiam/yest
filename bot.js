@@ -493,18 +493,18 @@ https://discordapp.com/api/oauth2/authorize?client_id=527267844413456415&permiss
 ,`
         ***__Colors help__***
 **
-『!createcolors Byusing this command the bot will create 133 roles as colors』
+『.createcolors Byusing this command the bot will create 133 roles as colors』
 this command can be used by staff only
-『!colors <the bot will show you the colors list』
+『.colors <the bot will show you the colors list』
 Normal members can use this command
-『!color <number> thats how you can change your color』
+『.color <number> thats how you can change your color』
 Normal members can use this command
         ***__Welcomer__***
 **
 How to setup
 『Create a channel called <welcome> 』
 or you can do this command 
-『!setwelcomer <channel name> 』
+『.setwelcomer <channel name> 』
 can be used by staff only
  ***__logs__***
 『You can setup the logs channel by creating a channel called <log>』
@@ -513,68 +513,67 @@ can be used by staff only
 ,`
         ***__General orders__***
 **
-『!memes/to get fun pics!!!』
-『!allbots/Displays all bots to the server』
-『!server/Shows you information about the server』
-『!bot/Displays all bot information』
-『!skin <name>/Shows you Minecraft Skin』
-『!count/Shows you the number of people in the server without a bots』
-『!invites/The bot will show you how many you have invited to the server 』
-『!invite-codes/It shows all of your invite links』
-『!cal/calculator』
-『!trans <language> <any thing>/It translates any language you want』
-『!short/Shorten you a big link to a small link』
-『!tag/Write you the word beautifully and great』
-『!google/Google anything you want』
-『!perms/it will show you your perms on the server』
-『!yn/ask the bot anything you want and it will answer you with yes or no』
-『!w/This will make you say somethisng as you are a  bot』
-『!rooms/the bot will show you all the server channels with there count』
-『!roles/the bot will show you all the server roles』
-『!emojilist/the bot will show you server emji's』
-『say/thhe bot will say what you said』
-『!image/server pic』
-『!members/��Show you the number of all people statues, number of bots and number of people』
-『!id/info about you』
-『!profile/your prfile』
-『!tc/Create a temporary Channel and you can select settings』
-『!bans / banned members count 』
-『!voice /  The day you write the total number of people in voice channels』
-『!avatar/you avatar』
-『!embed/Repeat what you said with embed』
-『!discrim/it will show you the people with the same tag』
-『!emoji <any things>/To convert any word you say to emoji』
-『!inv/to invite the bot to your server』
-『!support/Server support』
-『!contact/talk with  the bot owner』
+『.memes/to get fun pics!!!』
+『.allbots/Displays all bots to the server』
+『.server/Shows you information about the server』
+『.bot/Displays all bot information』
+『.skin <name>/Shows you Minecraft Skin』
+『.count/Shows you the number of people in the server without a bots』
+『.invites/The bot will show you how many you have invited to the server 』
+『.invite-codes/It shows all of your invite links』
+『.cal/calculator』
+『.trans <language> <any thing>/It translates any language you want』
+『.short/Shorten you a big link to a small link』
+『.tag/Write you the word beautifully and great』
+『.google/Google anything you want』
+『.perms/it will show you your perms on the server』
+『.yn/ask the bot anything you want and it will answer you with yes or no』
+『.w/This will make you say somethisng as you are a  bot』
+『.rooms/the bot will show you all the server channels with there count』
+『.roles/the bot will show you all the server roles』
+『.emojilist/the bot will show you server emji's』
+『.say/thhe bot will say what you said』
+『.image/server pic』
+『.members/��Show you the number of all people statues, number of bots and number of people』
+『.id/info about you』
+『.profile/your prfile』
+『.tc/Create a temporary Channel and you can select settings』
+『.bans / banned members count 』
+『.voice /  The day you write the total number of people in voice channels』
+『.avatar/you avatar』
+『.embed/Repeat what you said with embed』
+『.discrim/it will show you the people with the same tag』
+『.emoji <any things>/To convert any word you say to emoji』
+『.inv/to invite the bot to your server』
+『.support/Server support』
+『.contact/talk with  the bot owner』
 **
   `
 ,`
         ***__Administrative Orders__***
 **
-『!move @user / to move someone to your voice call』
-『!voiceonline /  create a voice channel with the name that it shows how many in the voice calls』
-『!role @user <rank> /to give someone a role』
-『!roleremove @user <rank> /to remove a role from someone』
-『!role all <rank> / to give a role to everyone』
-『!role humans <rank> /to give a role to humans only』
-『!role bots <rank> /to give a role to bots only』
-『!hchannel / hide a test channel』
-『!schannel / show a text channel』
-『!clr <numbr> / clear the chat with number 』
-『!clear /to clear the chat』
-『!mute @user <reason> / to give someone mute but make sure you have a role with this name <Muted>』
-『!unmute @user /to unmute someone 』
-『!kick @user <reason> / to kick someone with the reason』
-『!ban @user <reason> / to ban someone with the reason』
-『!mutechannel / to mute everyone from talking in a text channel』
-『!unmutechannel / to unmute everyone so they can talk in that channel』
-『!dc / the bot will delete all the channels』
-『!dr /the bot will delete all the roles』
-『!ct <name> / create a text channel』
-『!cv <name> / create a voice channel』
-『!delet <name> / to delete a channel』
-『❖!ccolors <number> / create colors with the number that you want』
+『.move @user / to move someone to your voice call』
+『.voiceonline /  create a voice channel with the name that it shows how many in the voice calls』
+『.role @user <rank> /to give someone a role』
+『.roleremove @user <rank> /to remove a role from someone』
+『.role all <rank> / to give a role to everyone』
+『.role humans <rank> /to give a role to humans only』
+『.role bots <rank> /to give a role to bots only』
+『.hchannel / hide a test channel』
+『.schannel / show a text channel』
+『.clr <numbr> / clear the chat with number 』
+『.clear /to clear the chat』
+『.mute @user <reason> / to give someone mute but make sure you have a role with this name <Muted>』
+『.unmute @user /to unmute someone 』
+『.kick @user <reason> / to kick someone with the reason』
+『.ban @user <reason> / to ban someone with the reason』
+『.mutechannel / to mute everyone from talking in a text channel』
+『.unmutechannel / to unmute everyone so they can talk in that channel』
+『.dc / the bot will delete all the channels』
+『.dr /the bot will delete all the roles』
+『.ct <name> / create a text channel』
+『.cv <name> / create a voice channel』
+『.delet <name> / to delete a channel』
    `,`
         ***__Music orders__***
 **
@@ -640,7 +639,7 @@ client.on('message', message => {
     }
 });
 client.on('message', msg => {
-	var prefix = "!";
+	var prefix = ".";
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
   let command = msg.content.split(" ")[0];
@@ -1040,7 +1039,7 @@ const zead = [
    '*** احد ما خرج من المنزل ***',
    '*** انتظر الجزء الثاني عندما يوصل البوت 100 سيرفر , ساعدني في نشر البوت وادخل هذا السيرفر  ***'
 ];
- c
+ 
 client.on('message', message => {
      if(!message.channel.guild) return;
 var prefix = ".";
@@ -2590,7 +2589,7 @@ client.on("message", (message) => {
 
         let args = message.content.split(' ').slice(1);
         let channel = message.client.channels.find('name', args.join(' '));
-        if (!channel) return message.reply('**There is no room like this name -_-**').catch(console.error);
+        if (!channel) return message.reply('**There is no channel like this name -_-**').catch(console.error);
         channel.delete()
     }
 });  
