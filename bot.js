@@ -2597,7 +2597,7 @@ client.on("message", (message) => {
 
 
 
-onst sWlc = {}
+const sWlc = {}
 const premium = ['389090790984515594']
 client.on('message', message => {
 var prefix = "!";
