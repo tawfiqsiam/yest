@@ -2596,7 +2596,7 @@ client.on("message", (message) => {
 
 var userData = {};
 client.on("message", function(message){
-if (message.content.startsWith(prefix + "rank")) {
+if (message.content.startsWith(".rank")) {
 	if (!userData[message.author.id]) {
 		userData[message.author.id] = {Money:0,Xp:0,Level:0}
 	}
@@ -2634,7 +2634,7 @@ userData[message.author.id].Money+= 0.25;
 const sWlc = {}
 const premium = ['502437783651090432', '', '', '']
 client.on('message', message => {
-var prefix = "$";
+var prefix = ".";
 if(message.channel.type === "dm") return;
 if(message.author.bot) return;
   if(!sWlc[message.guild.id]) sWlc[message.guild.id] = {
@@ -2659,7 +2659,7 @@ client.on("guildMemberAdd", member => {
     let memberavatar = member.user.avatarURL
       if (!welcomer) return;
       if(welcomer) {
-         moment.locale('ar-ly');
+         moment.locale('en-uk');
          var h = member.user;
         let heroo = new Discord.RichEmbed()
         .setColor('RANDOM')
@@ -2808,13 +2808,13 @@ client.on('guildMemberAdd',async member => {
    
             ctx.font = '36px Arial';
             ctx.fontSize = '72px';
-            ctx.fillStyle = "#ffffff";
+            ctx.fillStyle = "#9F00FA";
             ctx.textAlign = "center";
             ctx.fillText(member.user.username, 545, 177);
            
             ctx.font = '22px Arial Bold';
             ctx.fontSize = '72px';
-            ctx.fillStyle = "#ffffff";
+            ctx.fillStyle = "#9F00FA";
             ctx.textAlign = "center";
             ctx.fillText(`${member.guild.memberCount} Members`, 580, 140);
            
@@ -2838,7 +2838,7 @@ client.on('guildMemberAdd',async member => {
 
 
 client.on('message', message => {
-     if (message.content === "$servers") {
+     if (message.content === ".servers") {
 		 if(!message.channel.guild) return;
      let embed = new Discord.RichEmbed()
   .setColor("RANDOM")
