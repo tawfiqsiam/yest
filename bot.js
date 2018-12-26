@@ -2594,13 +2594,10 @@ client.on("message", (message) => {
     }
 });  
 
-
-
-
 const sWlc = {}
 const premium = ['389090790984515594']
 client.on('message', message => {
-var prefix = "!";
+var prefix = ".";
 if(message.channel.type === "dm") return;
 if(message.author.bot) return;
   if(!sWlc[message.guild.id]) sWlc[message.guild.id] = {
@@ -2628,21 +2625,21 @@ client.on("guildMemberAdd", member => {
     let memberavatar = member.user.avatarURL
       if (!welcomer) return;
       if(welcomer) {
-         moment.locale('ar-ly');
+         moment.locale('en-uk');
          var h = member.user;
         let heroo = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(h.avatarURL)
         .setAuthor(h.username,h.avatarURL)
-        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
-         .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)      
+        .addField(': joined discord ',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
+         .addField(': Joined the server',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)      
          .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
      welcomer.send({embed:heroo});          
          
       var Canvas = require('canvas')
       var jimp = require('jimp')
       
-      const w = ['PicsArt_07-17-07.58.02 (1).png'];
+      const w = ['https://pro.tutelleauquotidien.fr/img/logo-proxima.png'];
       
               let Image = Canvas.Image,
                   canvas = new Canvas(557, 241),
@@ -2679,7 +2676,7 @@ client.on("guildMemberAdd", member => {
                               let ava = new Avatar;
                               ava.src = buf;
                               ctx.beginPath();
-                 ctx.arc(120.8, 120.5, 112.3, 0, Math.PI*2, true);
+                 ctx.arc(110.8, 110.5, 112.3, 0, Math.PI*2, true);
                    ctx.closePath();
                    
                                  ctx.clip();
@@ -2697,8 +2694,6 @@ client.on("guildMemberAdd", member => {
       
       }
       });
-
-
 
 
 
@@ -2950,7 +2945,7 @@ client.on("guildMemberAdd", async member => {
 
 
 client.on("message", message => {
-	    if (message.content === ".help") {
+	    if (message.content === "!help") {
 	     const embed = new Discord.RichEmbed() 
 	         .setColor("#00FF00")
 	         .setDescription(`**❓❔❗️❕Send us your love!❗️❕❓❔**
@@ -2999,7 +2994,7 @@ m.sendMessage(args)
 
 client.on('guildCreate', guild => { //SC' | HeemPlayz#9999 ©
    
-  client.users.get("526288429827358751").send(
+  client.users.get("521479557375852547").send(
     "\n" + "**" + "● Server :" + "**" +
     "\n" + "**" + "» " + guild.name + "**" +
     "\n" + "**" + " ● ID : " + "**" + //SC' | HeemPlayz#9999 ©
@@ -3041,11 +3036,16 @@ client.on('guildDelete', guild => { //SC' | HeemPlayz#9999 ©
     "\n" + "**" + "» " + guild.createdAt.toLocaleString() + "**")
  
 });
-
+client.on('message', message => {
+  if(message.content.startsWith("."))
+  
+  message.channel.send(`**Welcome To __${message.guild.name}__**`);
+  
+  
   
 });
  client.on('message', msg => {//msg
-    if (msg.content === '.colors') {
+    if (msg.content === '!colors') {
       msg.channel.send({file : "https://cdn.discordapp.com/attachments/524185262977318922/526343242216767488/colors.png"})
     }
   });;
@@ -3053,7 +3053,7 @@ client.on('guildDelete', guild => { //SC' | HeemPlayz#9999 ©
 
 //////////////
  client.on('message', message => {
-      var prefix= ".";
+      var prefix= "!";
 
       if(message.content === prefix + 'createcolors') {
                            if(!message.channel.guild) return message.channel.send('**This Commnad only For Servers !**'); 
