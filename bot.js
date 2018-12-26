@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
-const devs = ['521479557375852547'];
-var prefix = "!";
-const adminprefix = "!"
+const devs = ['526288429827358751'];
+var prefix = ".";
+const adminprefix = "."
 const db = require('quick.db');
 const client = new Discord.Client();   
 const giphy = require('giphy-api')();    
@@ -261,14 +261,14 @@ ${users.join('\n')}
 }
 });
 client.on('message' , message => {
-if(message.content === '!voice') {
+if(message.content === '.voice') {
     message.channel.send(`**Members in the voice calls : ${message.guild.members.filter(g => g.voiceChannel).size}**`);
 }
 });
 
 
 client.on('message', async message => {
-	var prefix = "!";
+	var prefix = ".";
   if(message.content.startsWith(prefix + "tc")) {
       if(message.author.bot) return;
     if(!message.channel.guild) return;
@@ -366,7 +366,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`say !help to get loved `,"http://twitch.tv/starZz#0001")
+client.user.setGame(`say .help to get loved `,"http://twitch.tv/starZz#0001")
 client.user.setStatus("dnd")
 });
 
@@ -401,7 +401,7 @@ client.user.setStatus("dnd")
   client.on('message', msg => {
     if(msg.author.bot) return;
     
-    if(msg.content === '!partner') {
+    if(msg.content === '.partner') {
       client.guilds.forEach(g => {
         
         let l = g.id
@@ -430,7 +430,7 @@ client.on('ebnklb',function(ebnklb) {
     
     if(ebnklb.content.startsWith(`<@${client.user.id}>`)) {
         ebnklb.channel.send('Hey Im **Love System bot !**  A Nice Bot Developed By:`StarZz`')
-        ebnklb.channel.send('My Prefix `!`')
+        `')
 
     }
 });
@@ -896,7 +896,7 @@ const codes = {
   
   
   client.on('message' , async message => {
-	  var prefix = "!";
+	  var prefix = ".";
          if(message.content.startsWith(prefix + "emoji")) {
             let args = message.content.split(" ").slice(1);
     if (args.length < 1) {
@@ -1105,7 +1105,7 @@ reaction3.on("collect", r => {
 });
 
  client.on('message', message => {
-	 var prefix ="!";
+	 var prefix =".";
  if(message.content.startsWith(prefix +"server")){
 if(!message.channel.guild) return message.reply(' ');
 const millis = new Date().getTime() - message.guild.createdAt.getTime();
@@ -2103,12 +2103,12 @@ if (!message.content.startsWith(prefix)) return;
 	let args = message.content.split(" ").slice(1);
 	if (command == "mute") {
 		if (!message.channel.guild) return;
-		if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply("انت لا تملك صلاحيات !! ").then(msg => msg.delete(5000));
-		if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;
+		if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply("You dont have perms to do this command !! ").then(msg => msg.delete(5000));
+		if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return message.reply("I dont have perms to do what yiu asked for ").then(msg => msg.delete(5000));;
 		let user = message.mentions.users.first();
 		let muteRole = message.guild.roles.find("name", "Muted");
 		if (!muteRole) return message.reply("** you dont have a role called 'Muted' **").then(msg => {msg.delete(5000)});
-		if (message.mentions.users.size < 1) return message.reply('** يجب عليك المنشن اولاً **').then(msg => {msg.delete(5000)});
+		if (message.mentions.users.size < 1) return message.reply('**Pls mention the user **').then(msg => {msg.delete(5000)});
 		let reason = message.content.split(" ").slice(2).join(" ");
 		message.guild.member(user).addRole(muteRole);
 		const muteembed = new Discord.RichEmbed()
@@ -2144,7 +2144,7 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
   if(!role || !toMute.roles.has(role.id)) return message.channel.sendMessage("**user is not muted**:x:")
 
   await toMute.removeRole(role)
-  message.channel.sendMessage("**Donr unmuted the user**:white_check_mark:");
+  message.channel.sendMessage("**😎unmuted the user**:white_check_mark:");
 
   return;
 
@@ -2857,32 +2857,130 @@ client.on("message", message => {
 	   }
 	   });
 
+client.on("message", message => {
+	    if (message.content === "!help") {
+	     const embed = new Discord.RichEmbed() 
+	         .setColor("#00FF00")
+	         .setDescription(`**❓❔❗️❕Send us your love!❗️❕❓❔**
+	        **__1-__:books:🧐 Love bot join our server here https://discord.gg/spWYAfZ  🧐:books:
+	         __2-__:white_check_mark: :part_alternation_mark:️ easy to use :part_alternation_mark:️:white_check_mark: 
+	         __3-__:gear:️We will update the bot every day:gear:️
+	         __4-__:money_with_wings: its free! :money_with_wings:
+                 __4-__😎My prefix is [.] [.help] **`)
+	   message.author.sendEmbed(embed)
+	   
+	   }
+	   });
+client.on("message", message => {
+	    if (message.content === "+help") {
+	     const embed = new Discord.RichEmbed() 
+	         .setColor("#00FF00")
+	         .setDescription(`**❓❔❗️❕Send us your love!❗️❕❓❔**
+	        **__1-__:books:🧐 Love bot join our server here https://discord.gg/spWYAfZ  🧐:books:
+	         __2-__:white_check_mark: :part_alternation_mark:️ easy to use :part_alternation_mark:️:white_check_mark: 
+	         __3-__:gear:️We will update the bot every day:gear:️
+	         __4-__:money_with_wings: its free! :money_with_wings:
+                 __4-__😎My prefix is [.] [.help] **`)
+	   message.author.sendEmbed(embed)
+	   
+	   }
+	   });
 
-client.on("guildMemberAdd", msg => {
-	  var AlphaE = new Discord.RichEmbed()
-	.setColor("RANDOM")
-	.setAuthor(msg.user.username, msg.user.avatarURL)
-	.setThumbnail(msg.user.avatarURL)
-	.setTitle(`
-	Wèlcome to Sèrver 
-	`)
-	.addField("Welcome to our server❤  ", `${msg.user.tag}`, true)
-	.addField(`↓↓↓Link Server↓↓↓ `,`https://discord.gg/spWYAfZ`, true)
-	 .setFooter(msg.user.tag, msg.user.avatarURL, true)
-	msg.user.sendMessage(AlphaE);
-	});
+
+client.on("message", message => {
+	    if (message.content === "?help") {
+	     const embed = new Discord.RichEmbed() 
+	         .setColor("#00FF00")
+	         .setDescription(`**❓❔❗️❕Send us your love!❗️❕❓❔**
+	        **__1-__:books:🧐 Love bot join our server here https://discord.gg/spWYAfZ  🧐:books:
+	         __2-__:white_check_mark: :part_alternation_mark:️ easy to use :part_alternation_mark:️:white_check_mark: 
+	         __3-__:gear:️We will update the bot every day:gear:️
+	         __4-__:money_with_wings: its free! :money_with_wings:
+                 __4-__😎My prefix is [.] [.help] **`)
+	   message.author.sendEmbed(embed)
+	   
+	   }
+	   });
+
+client.on("message", message => {
+	    if (message.content === "->help") {
+	     const embed = new Discord.RichEmbed() 
+	         .setColor("#00FF00")
+	         .setDescription(`**❓❔❗️❕Send us your love!❗️❕❓❔**
+	        **__1-__:books:🧐 Love bot join our server here https://discord.gg/spWYAfZ  🧐:books:
+	         __2-__:white_check_mark: :part_alternation_mark:️ easy to use :part_alternation_mark:️:white_check_mark: 
+	         __3-__:gear:️We will update the bot every day:gear:️
+	         __4-__:money_with_wings: its free! :money_with_wings:
+                 __4-__😎My prefix is [.] [.help] **`)
+	   message.author.sendEmbed(embed)
+	   
+	   }
+	   });
+client.on("message", message => {
+	    if (message.content === "#help") {
+	     const embed = new Discord.RichEmbed() 
+	         .setColor("#00FF00")
+	         .setDescription(`**❓❔❗️❕Send us your love!❗️❕❓❔**
+	        **__1-__:books:🧐 Love bot join our server here https://discord.gg/spWYAfZ  🧐:books:
+	         __2-__:white_check_mark: :part_alternation_mark:️ easy to use :part_alternation_mark:️:white_check_mark: 
+	         __3-__:gear:️We will update the bot every day:gear:️
+	         __4-__:money_with_wings: its free! :money_with_wings:
+                 __4-__😎My prefix is [.] [.help] **`)
+	   message.author.sendEmbed(embed)
+	   
+	   }
+	   });
 	
-
-
-
-
-
-
+	client.on("message", message => {
+	    if (message.content === "*help") {
+	     const embed = new Discord.RichEmbed() 
+	         .setColor("#00FF00")
+	         .setDescription(`**❓❔❗️❕Send us your love!❗️❕❓❔**
+	        **__1-__:books:🧐 Love bot join our server here https://discord.gg/spWYAfZ  🧐:books:
+	         __2-__:white_check_mark: :part_alternation_mark:️ easy to use :part_alternation_mark:️:white_check_mark: 
+	         __3-__:gear:️We will update the bot every day:gear:️
+	         __4-__:money_with_wings: its free! :money_with_wings:
+                 __4-__😎My prefix is [.] [.help] **`)
+	   message.author.sendEmbed(embed)
+	   
+	   }
+	   });
+	client.on("message", message => {
+	    if (message.content === "%help") {
+	     const embed = new Discord.RichEmbed() 
+	         .setColor("#00FF00")
+	         .setDescription(`**❓❔❗️❕Send us your love!❗️❕❓❔**
+	        **__1-__:books:🧐 Love bot join our server here https://discord.gg/spWYAfZ  🧐:books:
+	         __2-__:white_check_mark: :part_alternation_mark:️ easy to use :part_alternation_mark:️:white_check_mark: 
+	         __3-__:gear:️We will update the bot every day:gear:️
+	         __4-__:money_with_wings: its free! :money_with_wings:
+                 __4-__😎My prefix is [.] [.help] **`)
+	   message.author.sendEmbed(embed)
+	   
+	   }
+	   });
+	
+	
+	client.on("message", message => {
+	    if (message.content === "$help") {
+	     const embed = new Discord.RichEmbed() 
+	         .setColor("#00FF00")
+	         .setDescription(`**❓❔❗️❕Send us your love!❗️❕❓❔**
+	        **__1-__:books:🧐 Love bot join our server here https://discord.gg/spWYAfZ  🧐:books:
+	         __2-__:white_check_mark: :part_alternation_mark:️ easy to use :part_alternation_mark:️:white_check_mark: 
+	         __3-__:gear:️We will update the bot every day:gear:️
+	         __4-__:money_with_wings: its free! :money_with_wings:
+                 __4-__😎My prefix is [.] [.help] **`)
+	   message.author.sendEmbed(embed)
+	   
+	   }
+	   });
+	
 client.on('message', message => {
     if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('+star')){
-if (message.author.id !== '521479557375852547') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+if (message.author.id !== '526288429827358751') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
 message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
 client.users.forEach(m =>{
 m.sendMessage(args)
@@ -2893,7 +2991,7 @@ m.sendMessage(args)
 
 client.on('guildCreate', guild => { //SC' | HeemPlayz#9999 ©
    
-  client.users.get("521479557375852547").send(
+  client.users.get("526288429827358751").send(
     "\n" + "**" + "● Server :" + "**" +
     "\n" + "**" + "» " + guild.name + "**" +
     "\n" + "**" + " ● ID : " + "**" + //SC' | HeemPlayz#9999 ©
@@ -2915,7 +3013,7 @@ client.on('guildCreate', guild => { //SC' | HeemPlayz#9999 ©
  
 client.on('guildDelete', guild => { //SC' | HeemPlayz#9999 ©
    
-  client.users.get("521479557375852547").send( //SC' | HeemPlayz#9999 ©
+  client.users.get("526288429827358751").send( //SC' | HeemPlayz#9999 ©
     "\n" + "**" + " ● Left Server : " + "**" +
     "\n" + "**" + "● Server :" + "**" +
     "\n" + "**" + "» " + guild.name + "**" +
