@@ -3034,7 +3034,7 @@ client.on('guildDelete', guild => { //SC' | HeemPlayz#9999 ©
  
 });
 client.on('message', message => {
-  if(message.content.startsWith("."))
+  if(message.content.startsWith("welcome"))
   
   message.channel.send(`**Welcome To __${message.guild.name}__**`);
   
