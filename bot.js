@@ -2594,41 +2594,6 @@ client.on("message", (message) => {
     }
 });  
 
-var userData = {};
-client.on("message", function(message){
-if (message.content.startsWith(".rank")) {
-	if (!userData[message.author.id]) {
-		userData[message.author.id] = {Money:0,Xp:0,Level:0}
-	}
-     var mentionned = message.mentions.users.first();
-
-      var x5bzm;
-      if(mentionned){
-          var x5bzm = mentionned;
-      } else {
-          var x5bzm = message.author;
-
-      }
-
-	
-	var CulLevel = Math.floor(0.25 * Math.sqrt(userData[message.author.id].Xp +1));
-	if (CulLevel > userData[message.author.id].Level) {userData[message.author.id].Level +=CulLevel}
-	let pEmbed = new Discord.RichEmbed()
-	.setColor("Random")
-	.addField("» UserName :", message.author.tag)
-	.addField("» Level :", userData[message.author.id].Level)
-	.addField("» XP :",Math.floor(userData[message.author.id].Xp))
-	message.channel.send(pEmbed);
-}
-if (!userData[message.author.id]) {
-	userData[message.author.id] = {Money:0,Xp:0,Level:0,Like:0}
-	}
-
-userData[message.author.id].Xp+= 0.25;
-userData[message.author.id].Money+= 0.25;
-
-});
-
 
 
 const sWlc = {}
