@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const devs = ['526288429827358751'];
+const devs = ['526288429827358751','502437783651090432'];
 var prefix = ".";
 const adminprefix = "."
 const db = require('quick.db');
@@ -1544,20 +1544,6 @@ client.on("message", message => {
 });
 
 
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Desert Bot- Script By : i1Suhaib`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(` .help | ${client.guilds.size} servers`)
-client.user.setStatus("dnd")
-});
-
-
-
-
 
 
 
@@ -2082,7 +2068,7 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
 client.on('guildCreate', guild => {
   var embed = new Discord.RichEmbed()
   .setColor(0x5500ff)
-  .setDescription(`**Thx for adding the bot to your server **`)
+  .setDescription(`**Thank you for adding the bot to your server **`)
       guild.owner.send(embed)
 });
 
@@ -2531,7 +2517,7 @@ client.on("message", (message) => {
 
 
 client.on('message', message => {
- var prefix = "!"
+ var prefix = "."
     if(message.content.startsWith(prefix + 'new')) {
         let args = message.content.split(' ').slice(1).join(' ');
         let support = message.guild.roles.find("name","Light");
