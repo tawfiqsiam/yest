@@ -25,8 +25,8 @@ const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const sql = require("sqlite");
- const dateFormat = require('dateformat'); 
- const pretty = require('pretty-ms') 
+const dateFormat = require('dateformat'); 
+const pretty = require('pretty-ms') 
 
 ,ti={}  
 ,spee={};
@@ -1171,7 +1171,7 @@ var v1 = new Discord.RichEmbed()
   v1.setTimestamp(new Date())
   v1.setColor("#6a109d")
   v1.setDescription('***__ Working on it plz wait!!!! __***')
-  v1.setFooter("# | ProXima TeaM |")
+  v1.setFooter("# | ProXima Team |")
 var heroo = new Discord.RichEmbed()
 .setColor('#6a109d')
 .setTimestamp(new Date())
@@ -1859,62 +1859,6 @@ const type = [
 
     }
 ];
- 
-client.on('message', message => {
-if (!points[message.author.id]) points[message.author.id] = {
-    points: 0,
-  };
-  if(!message.guild) return;
-    let id = message.author.id,prefix="!";
-    if (spee[id] && (new Date).getTime() - spee[id] < 15*1000) {
-        let r = (new Date).getTime() - spee[id];
-        r = 15*1000 - r;
-    message.channel.send(`**Sorry, Please Wait ${pretty(r, {verbose:true})}...**`).then(m => m.delete(5000));
-    return;
-    }
-    if ( message.content == prefix+'speed'){
-       
-        try{
-}catch(e){
- 
-}
- 
-    if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
- 
- 
-const item = type[Math.floor(Math.random() * type.length)];
-const filter = response => {  
-    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
-};
-message.channel.send('**Game is Start now...!**').then(msg => {
- 
- const embed = new Discord.RichEmbed()
- .setColor("0054dd")
-     .setAuthor(`⏳ |You have »15« seconds to type the word`)
-          .setImage(`${item.type}`)
- .setFooter(`${message.author.tag}`, message.author.avatarURL)
- 
- 
-         
-msg.channel.send(embed).then(() => {
-        message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
-        .then((collected) => {
-                  const sh = new Discord.RichEmbed()
-  .setColor("04791c")
-  .setDescription('**✅ |Good Job +1P**')
-   .setFooter(`${collected.first().author}`)
-  message.channel.sendEmbed(sh);
-            let won = collected.first().author; // في هذا السطر يقوم الكود بسحب الأي دي الذي قام بالأجابة اولاً
-            points[won.id].points++;
-          })
-          .catch(collected => { // في حال لم يقم أحد بالإجابة
-            message.channel.send(`🔚 |**Time Is End**`);
-          })
-        })
-    })
-    spee[id] = (new Date).getTime()
-}
-});
 
 
 
@@ -2107,8 +2051,8 @@ if (!message.content.startsWith(prefix)) return;
 		if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return message.reply("I dont have perms to do what yiu asked for ").then(msg => msg.delete(5000));;
 		let user = message.mentions.users.first();
 		let muteRole = message.guild.roles.find("name", "Muted");
-		if (!muteRole) return message.reply("** you dont have a role called 'Muted' **").then(msg => {msg.delete(5000)});
-		if (message.mentions.users.size < 1) return message.reply('**Pls mention the user **').then(msg => {msg.delete(5000)});
+		if (!muteRole) return message.reply("** You don't have a role called 'Muted' **").then(msg => {msg.delete(5000)});
+		if (message.mentions.users.size < 1) return message.reply('**Mention the user **').then(msg => {msg.delete(5000)});
 		let reason = message.content.split(" ").slice(2).join(" ");
 		message.guild.member(user).addRole(muteRole);
 		const muteembed = new Discord.RichEmbed()
@@ -2298,7 +2242,6 @@ message.channel.send(embed);
 
 client.on('message', message => {
 	var prefix = "."
-  if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
   let command = message.content.split(" ")[0];
@@ -2315,10 +2258,10 @@ client.on('message', message => {
   let reason = message.content.split(" ").slice(2).join(" ");
   /*let b5bzlog = client.channels.find("name", "5bz-log");
   if(!b5bzlog) return message.reply("I've detected that this server doesn't have a 5bz-log text channel.");*/
-  if (message.mentions.users.size < 1) return message.reply("**mention the user**");
-  if(!reason) return message.reply ("**add the reason**");
+  if (message.mentions.users.size < 1) return message.reply("**Mention a User**");
+  if(!reason) return message.reply ("**Provide a Reason**");
   if (!message.guild.member(user)
-  .bannable) return message.reply("**i cant ban this user**");
+  .bannable) return message.reply("**I can't ban this user**");
 
   message.guild.member(user).ban(7, user);
 
@@ -2337,7 +2280,6 @@ client.on('message', message => {
 
 client.on('message', message => {
 	var prefix = "."
-  if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
   let command = message.content.split(" ")[0];
@@ -2346,16 +2288,16 @@ client.on('message', message => {
   let args = message.content.split(" ").slice(1);
 
   if (command == "kick") {
-               if(!message.channel.guild) return message.reply('** This command only for servers**');
+               if(!message.channel.guild) return message.reply('** This command is only for servers**');
          
   if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("**You Don't Have ` KICK_MEMBERS ` Permission**");
   if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("**I Don't Have ` KICK_MEMBERS ` Permission**");
   let user = message.mentions.users.first();
   let reason = message.content.split(" ").slice(2).join(" ");
-  if (message.mentions.users.size < 1) return message.reply("**mention the user**");
-  if(!reason) return message.reply ("**add the reason**");
+  if (message.mentions.users.size < 1) return message.reply("**Mention a User**");
+  if(!reason) return message.reply ("**Provide a Reason**");
   if (!message.guild.member(user)
-  .kickable) return message.reply("**i cant kick this user**");
+  .kickable) return message.reply("**I can't kick this user**");
 
   message.guild.member(user).kick();
 
@@ -2584,7 +2526,7 @@ if (message.content.startsWith(".cv")) {
 
 
 client.on("message", (message) => {
-    if (message.content.startsWith('.delet')) {
+    if (message.content.startsWith('.delete')) {
         if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
 
         let args = message.content.split(' ').slice(1);
@@ -2614,7 +2556,7 @@ client.on('message', message => {
         let support = message.guild.roles.find("name","Light");
         let ticketsStation = message.guild.channels.find("name", "TICKETS");
         if(!args) {
-            return message.channel.send('الرجاء كتابة سبب التذكرة');
+            return message.channel.send('Provide a Reason');
         };
                 if(!support) {
                     return message.channel.send('**Please make sure that `Light` role exists and it\'s not duplicated.**');
@@ -2624,7 +2566,7 @@ client.on('message', message => {
             };
                 message.guild.createChannel(`𝑻𝑰𝑪𝑲𝑬𝑻`, "text").then(ticket => {
                     message.delete()
-                        message.channel.send(`تم انشاء تذكرتك. [ ${ticket} ]`);
+                        message.channel.send(`Your Ticket Has Been Made [ ${ticket} ]`);
                     ticket.setParent(ticketsStation);
                     ticketsStation.setPosition(1);
                         ticket.overwritePermissions(message.guild.id, {
@@ -2640,12 +2582,12 @@ client.on('message', message => {
                                     READ_MESSAGES: true
                                 });
                     let embed = new Discord.RichEmbed()
-                                .setTitle('**تذكرة جديدة.**')
+                                .setTitle('**New Ticket!**')
                                 .setColor("RANDOM")
                                 .setThumbnail(`${message.author.avatarURL}`)
-                                .addField('سبب التذكرة', args)
-                                .addField('صاحب التذكرة', message.author)
-                                .addField('الروم', `<#${message.channel.id}>`);
+                                .addField('Ticket Reason', args)
+                                .addField('Ticket Creator', message.author)
+                                .addField('Room', `<#${message.channel.id}>`);
 
                                 ticket.sendEmbed(embed);
                 }) .catch();
@@ -2656,7 +2598,7 @@ client.on('message', message => {
             return;
         };  
                 let embed = new Discord.RichEmbed()
-                    .setAuthor("هل تريد فعلآ اغلاق التذكرة ؟.")
+                    .setAuthor("Are you sure you want to close the ticket?")
                     .setColor("RANDOM");
                     message.channel.sendEmbed(embed) .then(codes => {
 
