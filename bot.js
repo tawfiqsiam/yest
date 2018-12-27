@@ -366,8 +366,8 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`say .help to get loved `,"http://twitch.tv/starZz#0001")
-client.user.setStatus("dnd")
+client.user.setGame(`.help | ${client.guilds.size} Servers`,"http://twitch.tv/starZz#0001")
+client.user.setStatus("online")
 });
 
 
@@ -469,15 +469,15 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
     let pages = [`
         ***__About the bot__***
 **
-this bot was created
-To make sure that your server dont need any other bots 
+This bot was created
+To make sure that your server Don't need any other bots 
 So what do we have on this bot 
-1.Welcomer can be used by staff only
-2.colors
-3.logs
-4.public commands
-5.admin commands
-6.music 
+1. Welcomer can be used by staff only
+2. Colors
+3. Logs
+4. Public Commands
+5. Admin Commands
+6. Music 
 **
 :gem:  What is good about the bot
  ا:rocket: The bot is Running 24/7
@@ -1106,7 +1106,7 @@ reaction3.on("collect", r => {
 
  client.on('message', message => {
 	 var prefix =".";
- if(message.content.startsWith(prefix +"server")){
+ if(message.content.startsWith(prefix + "server")){
 if(!message.channel.guild) return message.reply(' ');
 const millis = new Date().getTime() - message.guild.createdAt.getTime();
 const now = new Date();
