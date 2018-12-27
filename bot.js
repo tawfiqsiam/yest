@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const devs = ['526288429827358751','502437783651090432'];
 var prefix = ".";
-const adminprefix = "."
+const adminprefix = ".";
 const db = require('quick.db');
 const client = new Discord.Client();   
 const giphy = require('giphy-api')();    
@@ -26,7 +26,7 @@ const ytdl = require('ytdl-core');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const sql = require("sqlite");
 const dateFormat = require('dateformat'); 
-const pretty = require('pretty-ms') 
+const pretty = require('pretty-ms')
 
 ,ti={}  
 ,spee={};
@@ -2520,13 +2520,13 @@ client.on('message', message => {
  var prefix = "."
     if(message.content.startsWith(prefix + 'new')) {
         let args = message.content.split(' ').slice(1).join(' ');
-        let support = message.guild.roles.find("name","Light");
+        let support = message.guild.roles.find("name" , "ProXima");
         let ticketsStation = message.guild.channels.find("name", "TICKETS");
         if(!args) {
             return message.channel.send('Provide a Reason');
         };
                 if(!support) {
-                    return message.channel.send('**Please make sure that `Light` role exists and it\'s not duplicated.**');
+                    return message.channel.send('**Please make sure that `ProXima` role exists and it\'s not duplicated.**');
                 };
             if(!ticketsStation) {
                 message.guild.createChannel("Ticket", "category");
