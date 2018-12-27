@@ -2521,7 +2521,7 @@ client.on('message', message => {
     if(message.content.startsWith(prefix + 'new')) {
         let args = message.content.split(' ').slice(1).join(' ');
         let support = message.guild.roles.find("name" , "ProXima");
-        let ticketsStation = message.guild.channels.find("name", "TICKETS");
+        let ticketsStation = message.guild.channels.find("name", "Ticket");
         if(!args) {
             return message.channel.send('Provide a Reason');
         };
@@ -2531,7 +2531,7 @@ client.on('message', message => {
             if(!ticketsStation) {
                 message.guild.createChannel("Ticket", "category");
             };
-                message.guild.createChannel(`𝑻𝑰𝑪𝑲𝑬𝑻➺${message.author.username}#{message.author.discriminator}`, "text").then(ticket => {
+                message.guild.createChannel(`𝑻𝑰𝑪𝑲𝑬𝑻➺${message.author.username}#${message.author.discriminator}`, "text").then(ticket => {
                     message.delete()
                         message.channel.send(`Your Ticket Has Been Made [ ${ticket} ]`);
                     ticket.setParent(ticketsStation);
@@ -2561,7 +2561,7 @@ client.on('message', message => {
     }
     if(message.content.startsWith(prefix + 'close')) {
             if(!message.member.hasPermission("ADMINISTRATOR")) return;
-        if(!message.channel.name.startsWith(`𝑻𝑰𝑪𝑲𝑬𝑻➺${message.author.username}#{message.author.discriminator`)) {
+        if(!message.channel.name.startsWith(`𝑻𝑰𝑪𝑲𝑬𝑻➺${message.author.username}#${message.author.discriminator`)) {
             return;
         };  
                 let embed = new Discord.RichEmbed()
