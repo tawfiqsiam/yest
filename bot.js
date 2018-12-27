@@ -2608,61 +2608,6 @@ client.on('message', message => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-client.on('guildMemberRemove', member => {
-    var embed = new Discord.RichEmbed()
-.setAuthor(member.user.username, member.user.avatarURL)
-.setThumbnail(member.user.avatarURL)
-.setTitle('***it was really nice have you one the server***')
-.addField('**name**',`[ ${member} ]`)
-.addField('**members count **',`[ ${member.guild.memberCount} ]`,true)
-.setColor('Random')
-   
-   var channel =member.guild.channels.find('name', 'welcome')
-   if (!channel) return;
-         channel.send({embed : embed});
- 
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let antijoin = JSON.parse(fs.readFileSync('./antijoin.json' , 'utf8'));
  
  
