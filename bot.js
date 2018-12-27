@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const devs = ['526288429827358751','502437783651090432'];
+const devs = ['526288429827358751', '502437783651090432'];
 var prefix = ".";
 const adminprefix = ".";
 const db = require('quick.db');
@@ -2531,7 +2531,7 @@ client.on('message', message => {
             if(!ticketsStation) {
                 message.guild.createChannel("Ticket", "category");
             };
-                message.guild.createChannel(`𝑻𝑰𝑪𝑲𝑬𝑻`, "text").then(ticket => {
+                message.guild.createChannel(`𝑻𝑰𝑪𝑲𝑬𝑻 ➺ ${message.author.tag}`, "text").then(ticket => {
                     message.delete()
                         message.channel.send(`Your Ticket Has Been Made [ ${ticket} ]`);
                     ticket.setParent(ticketsStation);
@@ -2556,16 +2556,16 @@ client.on('message', message => {
                                 .addField('Ticket Creator', message.author)
                                 .addField('Room', `<#${message.channel.id}>`);
 
-                                ticket.sendEmbed(embed);
+                                ticket.send(embed);
                 }) .catch();
     }
     if(message.content.startsWith(prefix + 'close')) {
             if(!message.member.hasPermission("ADMINISTRATOR")) return;
-        if(!message.channel.name.startsWith("𝑻𝑰𝑪𝑲𝑬𝑻")) {
+        if(!message.channel.name.startsWith(`𝑻𝑰𝑪𝑲𝑬𝑻 ➺ ${message.author.tag}`)) {
             return;
         };  
                 let embed = new Discord.RichEmbed()
-                    .setAuthor("Are you sure you want to close the ticket?")
+                    .setAuthor("Are you sure you want to close the ticket? \nIf You are \nThen do .close again")
                     .setColor("RANDOM");
                     message.channel.sendEmbed(embed) .then(codes => {
 
