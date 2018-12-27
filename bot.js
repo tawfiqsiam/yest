@@ -1878,32 +1878,13 @@ if (message.content.startsWith(prefix + 'perms')) {
 });
 
 
- client.on('message', message => {
-	 var prefix = ".";
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-  
- 
-
-if (command == "fancy") {
-    let say = new Discord.RichEmbed()
-        .setTitle('Text emboss :')
-   message.channel.send(`\n ${zalgo(args.join(' '))}`);
-  }
-
-});
 
 client.on("message", message => {
 	var prefix = ".";
 	var args = message.content.split(' ').slice(1); 
 	var msg = message.content.toLowerCase();
 	if( !message.guild ) return;
-	if( !msg.startsWith( prefix + 'role' ) ) return;
+	if( !msg.startsWith(prefix + 'role')) return;
 	if(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(' **__You dont have perms__**');
 	if( msg.toLowerCase().startsWith( prefix + 'roleremove' ) ){
 		if( !args[0] ) return message.reply( '**:x: pls pemtion the user**' );
